@@ -4,13 +4,23 @@ import re
 from datetime import datetime
 import urllib.request
 import urllib.parse
+import urllib.error
 from html import escape
 
 # ==========================================
 # CONFIGURATION
 # ==========================================
 # IMPORTANT: Get SERPER_API_KEY from environment variable for security
-SERPER_API_KEY = os.getenv("SERPER_API_KEY", "5f53f80a3c330ef18f42629073dc70f312ae3ade")
+SERPER_API_KEY = os.getenv("SERPER_API_KEY")
+
+# Fallback check for local testing or misconfiguration
+if not SERPER_API_KEY or SERPER_API_KEY == "YOUR_SERPER_API_KEY_HERE":
+    # If not in GitHub Actions, we might want to allow a default for the user if they really want it
+    # but for security and reliable CI/CD, it's better to fail early.
+    print("❌ ERROR: SERPER_API_KEY is not set. Please set it as an environment variable.")
+    # Exit with code 1 so GitHub Actions marked as failure
+    import sys
+    sys.exit(1)
 
 # List of unique search queries (19 Terms)
 QUERIES = [
@@ -80,8 +90,13 @@ def search_serper(query, tbs):
         with urllib.request.urlopen(req) as response:
             res_data = response.read().decode('utf-8')
             return json.loads(res_data).get("organic", [])
+    except urllib.error.HTTPError as e:
+        print(f"❌ HTTP Error for query '{query}': {e.code} {e.reason}")
+        if e.code == 403:
+            print("   Hint: Your SERPER_API_KEY might be invalid or reached its limit.")
+        return []
     except Exception as e:
-        print(f"Error querying '{query}' with tbs={tbs}: {e}")
+        print(f"❌ Error querying '{query}' with tbs={tbs}: {e}")
         return []
 
 def is_valid_result(url, title, snippet):
