@@ -1,12 +1,10 @@
 name: Daily Auction Report
+# Last Refresh: 2026-03-03 (To trigger schedule re-registration)
 
 on:
-  schedule:
-    # 08:00 ICT is 01:00 UTC
-    #- cron: '0 1 * * *'
-    # 20:00 ICT is 13:00 UTC
-    #- cron: '0 13 * * *'
-  workflow_dispatch: # Allow manual trigger
+  # schedule is handled by Cron-job.org (more reliable than GitHub's built-in cron)
+  # See cronjob_guide.md for setup instructions
+  workflow_dispatch: # Allow manual trigger + Cron-job.org trigger
 
 jobs:
   build:
@@ -40,4 +38,3 @@ jobs:
           git add .
           git commit -m "Automated Report: $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
           git push origin main
-
