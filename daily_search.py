@@ -178,6 +178,32 @@ def save_daily_json(date_str, results_dict):
     except Exception as e:
         print(f"⚠️ Could not save JSON ({filepath}): {e}")
 
+def load_search_history():
+    """Load cross-day search history. Returns dict {key: date_str}."""
+    filepath = os.path.join(OUTPUT_DIR, "search_history.json")
+    if os.path.exists(filepath):
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️ Could not load history.json: {e}")
+    return {}
+
+def save_search_history(history, ict_now):
+    """Save history and prune records older than 14 days."""
+    filepath = os.path.join(OUTPUT_DIR, "search_history.json")
+    prune_date = (ict_now - timedelta(days=14)).strftime('%Y-%m-%d')
+    
+    # Pruning
+    new_history = {k: v for k, v in history.items() if v >= prune_date}
+    
+    try:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(new_history, f, ensure_ascii=False, indent=2)
+        print(f"📜 History updated ({len(new_history)} active records)")
+    except Exception as e:
+        print(f"⚠️ Could not save history.json: {e}")
+
 def generate_html_report(results, date_str):
     ict_now = get_ict_now()
     filename = f"result_{date_str}_daily.html"
@@ -628,10 +654,15 @@ def main():
     # ── ICT date for today (UTC+7) — works on GitHub Actions (UTC) and locally ──
     ict_now = get_ict_now()
     date_str = ict_now.strftime('%d_%m_%Y')   # e.g. "03_03_2026"
+    today_iso = ict_now.strftime('%Y-%m-%d')
     print(f"📅 Report date (ICT): {date_str}")
 
     # ── Load accumulated results from earlier runs today (Daily Digest) ──
     all_results = load_daily_json(date_str)   # dict: {url: result}
+    
+    # ── Load cross-day history ──
+    history = load_search_history()           # dict: {key: first_found_date}
+    
     print(f"🚀 Starting Search Process using {len(QUERIES)} queries...")
     
     for i, raw_query in enumerate(QUERIES):
@@ -655,17 +686,40 @@ def main():
             print(f"[{i+1}/{len(QUERIES)}] Querying: {query[:60]}... (tbs={tbs})")
             results = search_serper(query, tbs)
             found_tag = '1d' if tbs == 'qdr:d' else ('7d' if tbs == 'qdr:w' else '1m')
+            
             for r in results:
                 url = r.get('link')
-                # Only add NEW URLs (don't overwrite previously accumulated results)
-                if url and url not in all_results:
-                    if is_valid_result(url, r.get('title', ''), r.get('snippet', '')):
-                        r['_found_in'] = found_tag
-                        r['_found_at'] = ict_now.strftime('%H:%M')
-                        all_results[url] = r
+                title = r.get('title', '')
+                if not url: continue
+                
+                # Deduplication key: URL + Title (pruned whitespace)
+                history_key = f"{url.strip()}|{title.strip()}"
+                
+                # 1. Skip if already in current day's results
+                if url in all_results:
+                    continue
+                
+                # 2. Skip if seen in PREVIOUS days (History)
+                if history_key in history:
+                    # Optional: still show if it was first found TODAY in a previous run
+                    # but since we already check all_results, this is redundant.
+                    # We skip only if it was found BEFORE today.
+                    if history[history_key] < today_iso:
+                        continue
+
+                # 3. Valid result? Add to both
+                if is_valid_result(url, title, r.get('snippet', '')):
+                    r['_found_in'] = found_tag
+                    r['_found_at'] = ict_now.strftime('%H:%M')
+                    all_results[url] = r
+                    if history_key not in history:
+                        history[history_key] = today_iso
 
     # ── Save accumulated state back to JSON ──
     save_daily_json(date_str, all_results)
+    
+    # ── Save cross-day history ──
+    save_search_history(history, ict_now)
 
     # ── Sort: 1d first, then 7d, then 1m, then alphabetically by title ──
     priority = {'1d': 0, '7d': 1, '1m': 2}
