@@ -1,7 +1,7 @@
 import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 import urllib.request
 import urllib.parse
 import urllib.error
@@ -13,16 +13,26 @@ from html import escape
 # IMPORTANT: Get SERPER_API_KEY from environment variable for security
 SERPER_API_KEY = os.getenv("SERPER_API_KEY")
 
-# Fallback check for local testing or misconfiguration
+# Local testing support: Check for serper_key.txt if env var is missing
 if not SERPER_API_KEY or SERPER_API_KEY == "YOUR_SERPER_API_KEY_HERE":
-    # If not in GitHub Actions, we might want to allow a default for the user if they really want it
-    # but for security and reliable CI/CD, it's better to fail early.
-    print("❌ ERROR: SERPER_API_KEY is not set. Please set it as an environment variable.")
+    key_file = os.path.join(os.path.dirname(__file__), "serper_key.txt")
+    if os.path.exists(key_file):
+        try:
+            with open(key_file, "r", encoding="utf8") as f:
+                SERPER_API_KEY = f.read().strip()
+                print(f"ℹ️ Using API Key from local file: {key_file}")
+        except Exception as e:
+            print(f"⚠️ Error reading {key_file}: {e}")
+
+if not SERPER_API_KEY or SERPER_API_KEY == "YOUR_SERPER_API_KEY_HERE":
+    print("❌ ERROR: SERPER_API_KEY is not set.")
+    print("👉 To run locally: Create a file named 'serper_key.txt' and paste your key inside.")
+    print("👉 To run in GitHub: Add 'SERPER_API_KEY' to your Repository Secrets.")
     # Exit with code 1 so GitHub Actions marked as failure
     import sys
     sys.exit(1)
 
-# List of unique search queries (19 Terms)
+# List of unique search queries (add/remove entries freely — count updates automatically)
 QUERIES = [
     # กลุ่ม A — Term หลัก
     "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน OR วัสดุ) (ชำรุด OR เสื่อมสภาพ OR \"ไม่จำเป็น\") -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:instagram.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
@@ -140,9 +150,36 @@ def highlight_text(text):
         highlighted = re.sub(f"({word})", r"<span class='highlight'>\1</span>", highlighted, flags=re.IGNORECASE)
     return highlighted
 
-def generate_html_report(results):
-    now = datetime.now()
-    filename = f"result_{now.strftime('%d_%m_%Y_%H_%M')}.html"
+def get_ict_now():
+    """Return current datetime in ICT (UTC+7), works on GitHub Actions (UTC) and local."""
+    return datetime.utcnow() + timedelta(hours=7)
+
+def load_daily_json(date_str):
+    """Load accumulated results JSON for a given date. Returns dict {url: result}."""
+    filepath = os.path.join(OUTPUT_DIR, f"result_{date_str}.json")
+    if os.path.exists(filepath):
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                print(f"📂 Loaded {len(data)} existing results from {filepath}")
+                return data
+        except Exception as e:
+            print(f"⚠️ Could not load existing JSON ({filepath}): {e}")
+    return {}
+
+def save_daily_json(date_str, results_dict):
+    """Save accumulated results dict to JSON for the given date."""
+    filepath = os.path.join(OUTPUT_DIR, f"result_{date_str}.json")
+    try:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(results_dict, f, ensure_ascii=False, indent=2)
+        print(f"💾 Saved {len(results_dict)} results to {filepath}")
+    except Exception as e:
+        print(f"⚠️ Could not save JSON ({filepath}): {e}")
+
+def generate_html_report(results, date_str):
+    ict_now = get_ict_now()
+    filename = f"result_{date_str}_daily.html"
     filepath = os.path.join(OUTPUT_DIR, filename)
 
     html_template = """
@@ -155,19 +192,21 @@ def generate_html_report(results):
         <style>
             body {{
                 font-family: Arial, sans-serif;
-                background-color: #fff; /* Google uses white background */
+                background-color: #fff;
                 margin: 0;
                 padding: 20px 40px;
                 color: #202124;
             }}
             .container {{
-                max-width: 652px; /* Close to Google Search width */
+                max-width: 652px;
                 margin: 0;
             }}
             h1 {{
-                font-size: 22px;
-                font-weight: normal;
-                margin-bottom: 5px;
+                font-size: 32px;
+                font-weight: bold;
+                border-bottom: 3px solid #1a0dab;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
             }}
             .meta {{
                 font-size: 14px;
@@ -176,22 +215,63 @@ def generate_html_report(results):
                 border-bottom: 1px solid #ebebeb;
                 padding-bottom: 15px;
             }}
+            /* ===== READ / UNREAD STATES ===== */
             .result-item {{
                 margin-bottom: 28px;
-                padding: 10px;
-                border-radius: 8px;
-                transition: background-color 0.2s;
+                padding: 10px 10px 10px 14px;
+                border-left: 4px solid transparent;
+                border-radius: 4px;
+                transition: background-color 0.25s, opacity 0.25s;
                 position: relative;
             }}
             .result-item.read {{
-                background-color: #ffebee !important;
+                background-color: #f5f5f5;
+                opacity: 0.55;
+                border-left-color: #bdbdbd;
             }}
+            .result-item.read .result-title h3 {{
+                text-decoration: line-through;
+                color: #9e9e9e;
+            }}
+            .result-item.read .result-snippet {{
+                color: #bdbdbd;
+            }}
+            /* ===== MARK-AS-READ BUTTON ===== */
+            .mark-read-btn {{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: none;
+                border: 1.5px solid #bdbdbd;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                cursor: pointer;
+                font-size: 14px;
+                color: #bdbdbd;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s;
+                flex-shrink: 0;
+            }}
+            .mark-read-btn:hover {{
+                background-color: #e8f5e9;
+                border-color: #4caf50;
+                color: #4caf50;
+            }}
+            .result-item.read .mark-read-btn {{
+                border-color: #4caf50;
+                color: #4caf50;
+                background-color: #e8f5e9;
+            }}
+            /* ===== RESULT CARD ELEMENTS ===== */
             .result-top {{
                 display: flex;
                 align-items: center;
                 margin-bottom: 4px;
+                padding-right: 36px;
             }}
-            /* Mimic Google's icon/domain display */
             .result-icon {{
                 background-color: #f1f3f4;
                 border-radius: 50%;
@@ -202,6 +282,7 @@ def generate_html_report(results):
                 justify-content: center;
                 margin-right: 12px;
                 overflow: hidden;
+                flex-shrink: 0;
             }}
             .result-icon img {{
                 width: 16px;
@@ -227,6 +308,7 @@ def generate_html_report(results):
                 display: inline-block;
                 margin-bottom: 4px;
                 line-height: 1.3;
+                padding-right: 36px;
             }}
             .result-title h3 {{
                 font-size: 20px;
@@ -235,11 +317,11 @@ def generate_html_report(results):
                 padding: 0;
                 font-weight: normal;
                 display: inline;
+                transition: color 0.25s;
             }}
             .result-title:hover h3 {{
                 text-decoration: underline;
             }}
-            /* Stylus can override this easily */
             .result-title:visited h3 {{
                 color: #609;
             }}
@@ -247,6 +329,7 @@ def generate_html_report(results):
                 font-size: 14px;
                 line-height: 1.58;
                 color: #4d5156;
+                transition: color 0.25s;
             }}
             .highlight {{
                 color: #c5221f;
@@ -264,40 +347,101 @@ def generate_html_report(results):
                 color: #70757a;
                 font-weight: bold;
             }}
+            .stats-bar {{
+                font-size: 13px;
+                color: #70757a;
+                margin-bottom: 8px;
+            }}
+            #clear-all-btn {{
+                font-size: 12px;
+                color: #1a73e8;
+                cursor: pointer;
+                background: none;
+                border: none;
+                padding: 0;
+                margin-left: 12px;
+                text-decoration: underline;
+            }}
         </style>
     </head>
     <body>
         <div class="container">
-            <h1 style="font-size: 32px; font-weight: bold; border-bottom: 3px solid #1a0dab; padding-bottom: 10px; margin-bottom: 20px;">
-                📄 ผลการค้นหาประจำวันที่ {date}
-            </h1>
-            <div class="meta">พบข้อมูลทั้งหมด {count} รายการ</div>
-            
+            <h1>📄 ผลการค้นหาประจำวันที่ {date}</h1>
+            <div class="meta">
+                พบข้อมูลทั้งหมด {count} รายการ
+                <span class="stats-bar" id="stats-bar"></span>
+            </div>
+            <div style="margin-bottom:16px;">
+                <button id="clear-all-btn" onclick="clearAllRead()">↺ รีเซ็ต "อ่านแล้ว" ทั้งหมด</button>
+            </div>
+
             <div id="results-list">
                 {results_html}
             </div>
         </div>
 
         <script>
-            // Handle clicking links to mark as read (Fallback option)
+            const STORAGE_KEY = 'viewedLinks_v2';
+
+            function getViewed() {{
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            }}
+            function saveViewed(arr) {{
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+            }}
+            function updateStats() {{
+                const total = document.querySelectorAll('.result-item').length;
+                const read  = document.querySelectorAll('.result-item.read').length;
+                const bar   = document.getElementById('stats-bar');
+                if (bar) bar.textContent = ` — อ่านแล้ว ${{read}} / ${{total}} รายการ`;
+            }}
+            function clearAllRead() {{
+                saveViewed([]);
+                document.querySelectorAll('.result-item.read').forEach(el => el.classList.remove('read'));
+                updateStats();
+            }}
+
             document.addEventListener('DOMContentLoaded', function() {{
-                const links = document.querySelectorAll('.tracked-link');
-                let viewedLinks = JSON.parse(localStorage.getItem('viewedLinks')) || [];
-                
-                links.forEach(link => {{
-                    const url = link.getAttribute('href');
-                    const parentItem = link.closest('.result-item');
-                    if(viewedLinks.includes(url)) {{
-                        parentItem.classList.add('read');
-                    }}
-                    link.addEventListener('click', function(e) {{
-                        if(!viewedLinks.includes(url)) {{
-                            viewedLinks.push(url);
-                            localStorage.setItem('viewedLinks', JSON.stringify(viewedLinks));
+                let viewed = getViewed();
+
+                document.querySelectorAll('.result-item').forEach(item => {{
+                    const url = item.dataset.url;
+                    const btn = item.querySelector('.mark-read-btn');
+
+                    // Restore read state
+                    if (viewed.includes(url)) item.classList.add('read');
+
+                    // Mark-as-read button
+                    btn.addEventListener('click', function(e) {{
+                        e.stopPropagation();
+                        let v = getViewed();
+                        if (item.classList.contains('read')) {{
+                            // Toggle back to unread
+                            item.classList.remove('read');
+                            v = v.filter(u => u !== url);
+                        }} else {{
+                            item.classList.add('read');
+                            if (!v.includes(url)) v.push(url);
                         }}
-                        parentItem.classList.add('read');
+                        saveViewed(v);
+                        updateStats();
+                    }});
+
+                    // Clicking any link also marks as read
+                    item.querySelectorAll('.tracked-link').forEach(link => {{
+                        link.addEventListener('click', function() {{
+                            let v = getViewed();
+                            if (!v.includes(url)) {{
+                                v.push(url);
+                                saveViewed(v);
+                            }}
+                            item.classList.add('read');
+                            updateStats();
+                        }});
                     }});
                 }});
+
+                updateStats();
             }});
         </script>
     </body>
@@ -328,14 +472,17 @@ def generate_html_report(results):
             display_url = display_url[:45] + "..." + display_url[-15:]
             
         found_in = r.get('_found_in', '7d')
-        badge_text = 'ภายใน 24 ชั่วโมงที่ผ่านมา — ' if found_in == '1d' else 'ภายใน 7 วันที่ผ่านมา — '
+        badge_text = 'ภายใน 24 ชั่วโมงที่ผ่านมา — ' if found_in == '1d' else ('ภายใน 7 วันที่ผ่านมา — ' if found_in == '7d' else 'ภายใน 1 เดือนที่ผ่านมา — ')
+        # Escape url for use in data-url attribute
+        url_escaped = escape(url)
 
         results_html += f"""
-        <div class="result-item">
+        <div class="result-item" data-url="{url_escaped}">
             <div class="index-badge">{idx}.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
             <div class="result-top">
                 <div class="result-icon">
-                    <img src="{favicon_url}" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+'" />
+                    <img src="{favicon_url}" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
                 </div>
                 <div class="result-site-info">
                     <a href="{url}" class="result-site-name tracked-link" target="_blank">{domain}</a>
@@ -351,8 +498,11 @@ def generate_html_report(results):
         </div>
         """
 
+    # Format date display (DD/MM/YYYY) from date_str (DD_MM_YYYY)
+    d, m, y = date_str.split('_')
+    date_display = f"{d}/{m}/{y}"
     final_html = html_template.format(
-        date=now.strftime('%d/%m/%Y %H:%M'),
+        date=date_display,
         count=len(results),
         results_html=results_html
     )
@@ -365,16 +515,17 @@ def generate_html_report(results):
 
 def generate_index_html():
     import glob
-    files = sorted(glob.glob(os.path.join(OUTPUT_DIR, "result_*.html")), reverse=True)
+    # Only list daily digest files (one per day)
+    files = sorted(glob.glob(os.path.join(OUTPUT_DIR, "result_*_daily.html")), reverse=True)
     
     links_html = ""
     for f in files:
         fname = os.path.basename(f)
-        # Extract date/time from filename result_DD_MM_YYYY_HH_MM.html
-        match = re.search(r'result_(\d{2})_(\d{2})_(\d{4})_(\d{2})_(\d{2})', fname)
+        # Extract date from filename result_DD_MM_YYYY_daily.html
+        match = re.search(r'result_(\d{2})_(\d{2})_(\d{4})_daily', fname)
         if match:
-            d, m, y, hh, mm = match.groups()
-            display_name = f"รายงานวันที่ {d}/{m}/{y} เวลา {hh}:{mm}"
+            d, m, y = match.groups()
+            display_name = f"📅 รายงานประจำวันที่ {d}/{m}/{y}"
             links_html += f'<li><a href="{fname}" class="report-link">{display_name}</a></li>\n'
         else:
             links_html += f'<li><a href="{fname}" class="report-link">{fname}</a></li>\n'
@@ -465,7 +616,13 @@ def main():
         print("❌ Error: Please set your SERPER_API_KEY in the script first.")
         return
 
-    all_results = {}
+    # ── ICT date for today (UTC+7) — works on GitHub Actions (UTC) and locally ──
+    ict_now = get_ict_now()
+    date_str = ict_now.strftime('%d_%m_%Y')   # e.g. "03_03_2026"
+    print(f"📅 Report date (ICT): {date_str}")
+
+    # ── Load accumulated results from earlier runs today (Daily Digest) ──
+    all_results = load_daily_json(date_str)   # dict: {url: result}
     print(f"🚀 Starting Search Process using {len(QUERIES)} queries...")
     
     for i, raw_query in enumerate(QUERIES):
@@ -480,34 +637,36 @@ def main():
         if not query:
             continue
             
-        print(f"[{i+1}/{len(QUERIES)}] Querying: {query} ...")
-        
-        # Search last 24 hours (for all except E1)
-        # For E1 (last item), search last 1 month if it's the webportal query
+        # Determine timeframes for this query
         timeframes = ["qdr:d", "qdr:w"]
-        if "webportal.bangkok.go.th" in query:
-            timeframes = ["qdr:m"] # Bangkok Web Portal 1 month
+        if "webportal.bangkok.go.th" in raw_query or ".prd.go.th" in raw_query:
+            timeframes = ["qdr:m"]  # Special sites: search 1 month
 
         for tbs in timeframes:
-            print(f"[{i+1}/{len(QUERIES)}] Querying: {query[:50]}... (tbs={tbs})")
+            print(f"[{i+1}/{len(QUERIES)}] Querying: {query[:60]}... (tbs={tbs})")
             results = search_serper(query, tbs)
             found_tag = '1d' if tbs == 'qdr:d' else ('7d' if tbs == 'qdr:w' else '1m')
             for r in results:
                 url = r.get('link')
+                # Only add NEW URLs (don't overwrite previously accumulated results)
                 if url and url not in all_results:
                     if is_valid_result(url, r.get('title', ''), r.get('snippet', '')):
                         r['_found_in'] = found_tag
                         all_results[url] = r
 
-    # Convert Dict back to List
-    final_list = list(all_results.values())
-    
-    # Sort the list: prioritizing 1d results first, then alphabetically
-    final_list_sorted = sorted(final_list, key=lambda x: (x['_found_in'], x.get('title', '')))
+    # ── Save accumulated state back to JSON ──
+    save_daily_json(date_str, all_results)
 
-    print(f"\n🔍 Found {len(final_list_sorted)} absolute unique and matching results.")
+    # ── Sort: 1d first, then 7d, then 1m, then alphabetically by title ──
+    priority = {'1d': 0, '7d': 1, '1m': 2}
+    final_list_sorted = sorted(
+        all_results.values(),
+        key=lambda x: (priority.get(x.get('_found_in', '7d'), 1), x.get('title', ''))
+    )
+
+    print(f"\n🔍 Found {len(final_list_sorted)} unique results total (accumulated for {date_str}).")
     
-    generate_html_report(final_list_sorted)
+    generate_html_report(final_list_sorted, date_str)
     generate_index_html()
 
 if __name__ == "__main__":
