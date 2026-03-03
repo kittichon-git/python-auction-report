@@ -61,8 +61,8 @@ QUERIES = [
     "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (สงขลา OR สตูล OR ตรัง OR พัทลุง OR ปัตตานี OR ยะลา OR นราธิวาส) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
     
     # กลุ่ม E — Term พิเศษเฉพาะเว็บ
-    "ขายทอดตลาด site:webportal.bangkok.go.th"
-	"ขายทอดตลาด site:.prd.go.th"
+    "ขายทอดตลาด site:webportal.bangkok.go.th",
+    "ขายทอดตลาด site:.prd.go.th"
 ]
 
 # Filtering Words
@@ -473,7 +473,15 @@ def generate_html_report(results, date_str):
             display_url = display_url[:45] + "..." + display_url[-15:]
             
         found_in = r.get('_found_in', '7d')
-        badge_text = 'ภายใน 24 ชั่วโมงที่ผ่านมา — ' if found_in == '1d' else ('ภายใน 7 วันที่ผ่านมา — ' if found_in == '7d' else 'ภายใน 1 เดือนที่ผ่านมา — ')
+        found_at = r.get('_found_at', 'N/A')
+        badge_text = f'({found_at}) '
+        if found_in == '1d':
+            badge_text += 'ภายใน 24 ชม. — '
+        elif found_in == '7d':
+            badge_text += 'ภายใน 7 วัน — '
+        else:
+            badge_text += 'ภายใน 1 เดือน — '
+            
         # Escape url for use in data-url attribute
         url_escaped = escape(url)
 
@@ -653,6 +661,7 @@ def main():
                 if url and url not in all_results:
                     if is_valid_result(url, r.get('title', ''), r.get('snippet', '')):
                         r['_found_in'] = found_tag
+                        r['_found_at'] = ict_now.strftime('%H:%M')
                         all_results[url] = r
 
     # ── Save accumulated state back to JSON ──
