@@ -62,6 +62,7 @@ QUERIES = [
     
     # กลุ่ม E — Term พิเศษเฉพาะเว็บ
     "ขายทอดตลาด site:webportal.bangkok.go.th"
+	"ขายทอดตลาด site:.prd.go.th"
 ]
 
 # Filtering Words
