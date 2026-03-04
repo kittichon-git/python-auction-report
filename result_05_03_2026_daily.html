@@ -1,0 +1,805 @@
+
+    <!DOCTYPE html>
+    <html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>รายงานผลการค้นหา 05/03/2026</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #fff;
+                margin: 0;
+                padding: 20px 40px;
+                color: #202124;
+            }
+            .container {
+                max-width: 652px;
+                margin: 0;
+            }
+            h1 {
+                font-size: 32px;
+                font-weight: bold;
+                border-bottom: 3px solid #1a0dab;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+            .meta {
+                font-size: 14px;
+                color: #70757a;
+                margin-bottom: 25px;
+                border-bottom: 1px solid #ebebeb;
+                padding-bottom: 15px;
+            }
+            /* ===== READ / UNREAD STATES ===== */
+            .result-item {
+                margin-bottom: 28px;
+                padding: 10px 10px 10px 14px;
+                border-left: 4px solid transparent;
+                border-radius: 4px;
+                transition: background-color 0.25s, opacity 0.25s;
+                position: relative;
+            }
+            .result-item.read {
+                background-color: #f5f5f5;
+                opacity: 0.55;
+                border-left-color: #bdbdbd;
+            }
+            .result-item.read .result-title h3 {
+                text-decoration: line-through;
+                color: #9e9e9e;
+            }
+            .result-item.read .result-snippet {
+                color: #bdbdbd;
+            }
+            /* ===== MARK-AS-READ BUTTON ===== */
+            .mark-read-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: none;
+                border: 1.5px solid #bdbdbd;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                cursor: pointer;
+                font-size: 14px;
+                color: #bdbdbd;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s;
+                flex-shrink: 0;
+            }
+            .mark-read-btn:hover {
+                background-color: #e8f5e9;
+                border-color: #4caf50;
+                color: #4caf50;
+            }
+            .result-item.read .mark-read-btn {
+                border-color: #4caf50;
+                color: #4caf50;
+                background-color: #e8f5e9;
+            }
+            /* ===== RESULT CARD ELEMENTS ===== */
+            .result-top {
+                display: flex;
+                align-items: center;
+                margin-bottom: 4px;
+                padding-right: 36px;
+            }
+            .result-icon {
+                background-color: #f1f3f4;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 12px;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+            .result-icon img {
+                width: 16px;
+                height: 16px;
+            }
+            .result-site-info {
+                display: flex;
+                flex-direction: column;
+            }
+            .result-site-name {
+                font-size: 14px;
+                color: #202124;
+                text-decoration: none;
+            }
+            .result-url {
+                font-size: 12px;
+                color: #4d5156;
+                text-decoration: none;
+                word-wrap: break-word;
+            }
+            .result-title {
+                text-decoration: none;
+                display: inline-block;
+                margin-bottom: 4px;
+                line-height: 1.3;
+                padding-right: 36px;
+            }
+            .result-title h3 {
+                font-size: 20px;
+                color: #1a0dab;
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+                display: inline;
+                transition: color 0.25s;
+            }
+            .result-title:hover h3 {
+                text-decoration: underline;
+            }
+            .result-title:visited h3 {
+                color: #609;
+            }
+            .result-snippet {
+                font-size: 14px;
+                line-height: 1.58;
+                color: #4d5156;
+                transition: color 0.25s;
+            }
+            .highlight {
+                color: #c5221f;
+                font-weight: bold;
+                background-color: transparent;
+            }
+            .date-badge {
+                color: #70757a;
+            }
+            .index-badge {
+                position: absolute;
+                left: -35px;
+                top: 15px;
+                font-size: 14px;
+                color: #70757a;
+                font-weight: bold;
+            }
+            .stats-bar {
+                font-size: 13px;
+                color: #70757a;
+                margin-bottom: 8px;
+            }
+            #clear-all-btn {
+                font-size: 12px;
+                color: #1a73e8;
+                cursor: pointer;
+                background: none;
+                border: none;
+                padding: 0;
+                margin-left: 12px;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>📄 ผลการค้นหาประจำวันที่ 05/03/2026</h1>
+            <div class="meta">
+                พบข้อมูลทั้งหมด 27 รายการ
+                <span class="stats-bar" id="stats-bar"></span>
+            </div>
+            <div style="margin-bottom:16px;">
+                <button id="clear-all-btn" onclick="clearAllRead()">↺ รีเซ็ต "อ่านแล้ว" ทั้งหมด</button>
+            </div>
+
+            <div id="results-list">
+                
+        <div class="result-item" data-url="https://www.commsci.psu.ac.th/">
+            <div class="index-badge">1.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.commsci.psu.ac.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.commsci.psu.ac.th/" class="result-site-name tracked-link" target="_blank">www.commsci.psu.ac.th</a>
+                    <a href="https://www.commsci.psu.ac.th/" class="result-url tracked-link" target="_blank">https://www.commsci.psu.ac.th/</a>
+                </div>
+            </div>
+            <a href="https://www.commsci.psu.ac.th/" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>COMMSCI PSU - มหาวิทยาลัยสงขลานครินทร์</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ประกาศคณะวิทยาการสื่อสาร เรื่อง การ<span class='highlight'>จำหน่าย</span><span class='highlight'>ครุภัณฑ์</span>ยานพาหนะ รายการรถราชการ <span class='highlight'>รถยนต์</span>นั่งส่วนบุคคลเกิน 7 คน จำนวน 1 คัน ด้วยวิธีการ<span class='highlight'>ขายทอดตลาด</span> ประจำปีงบประมาณ 2569. 13/02/2026. ดูราย ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://nppao.go.th/public/download.php?filename=%E0%B8%8B%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B8%B5%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A0%E0%B8%B1%E0%B8%A2%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%87%E0%B8%82%E0%B8%A5%E0%B8%B2.pdf&amp;filepath=dispatch_upload/backend/core_dispatch_435683_1.pdf&amp;document_root=core-website.com">
+            <div class="index-badge">2.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=nppao.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://nppao.go.th/public/download.php?filename=%E0%B8%8B%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B8%B5%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A0%E0%B8%B1%E0%B8%A2%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%87%E0%B8%82%E0%B8%A5%E0%B8%B2.pdf&filepath=dispatch_upload/backend/core_dispatch_435683_1.pdf&document_root=core-website.com" class="result-site-name tracked-link" target="_blank">nppao.go.th</a>
+                    <a href="https://nppao.go.th/public/download.php?filename=%E0%B8%8B%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B8%B5%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A0%E0%B8%B1%E0%B8%A2%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%87%E0%B8%82%E0%B8%A5%E0%B8%B2.pdf&filepath=dispatch_upload/backend/core_dispatch_435683_1.pdf&document_root=core-website.com" class="result-url tracked-link" target="_blank">https://nppao.go.th/public/download.php?filen...ore-website.com</a>
+                </div>
+            </div>
+            <a href="https://nppao.go.th/public/download.php?filename=%E0%B8%8B%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B8%B5%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A0%E0%B8%B1%E0%B8%A2%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%87%E0%B8%82%E0%B8%A5%E0%B8%B2.pdf&filepath=dispatch_upload/backend/core_dispatch_435683_1.pdf&document_root=core-website.com" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>[PDF] ถึง สำนักงานส่งเสริมการปกครองท้องถิ่นอำเภอ ทุกอำเภอ องค์การบริหารส่วน ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ในการ<span class='highlight'>จำหน่าย</span><span class='highlight'>พัสดุ</span>กรณีเกิดเหตุมหาอุทกภัยในเขตท้องที่จังหวัดสงขลา แจ้งว่า ภายหลังเหตุมหาอุทกภัย. ในเขตท้องที่จังหวัดสงขลา ส่งผลให้ทรัพย์สินของหน่วยงานของรัฐเกิด<span class='highlight'>ชำรุด</span> เสียหาย <span class='highlight'>เสื่อมสภาพ</span> หรือสูญไป. ตาม ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.phetchabunpao.go.th/index.php?option=com_docman&amp;task=doc_download&amp;gid=12022">
+            <div class="index-badge">3.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.phetchabunpao.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.phetchabunpao.go.th/index.php?option=com_docman&task=doc_download&gid=12022" class="result-site-name tracked-link" target="_blank">www.phetchabunpao.go.th</a>
+                    <a href="https://www.phetchabunpao.go.th/index.php?option=com_docman&task=doc_download&gid=12022" class="result-url tracked-link" target="_blank">https://www.phetchabunpao.go.th/index.php?opt...nload&gid=12022</a>
+                </div>
+            </div>
+            <a href="https://www.phetchabunpao.go.th/index.php?option=com_docman&task=doc_download&gid=12022" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>[PDF] ประกาศองค์การบริหารส่วนจังหวัดเพชรบูรณ์</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>(๔.๒) การยื่นข้อเสนอด้วยวิธีประกวดราคาอิเล็กทรอนิกส์ (e - bidding) ให้ผู้เข้าร่วม. ค้าที่ได้รับมอบหมายหรือมอบอำนาจตามข้อ (๔.๑) ดำเนินการซื้อเอกสารประกวดราคาอิเล็กทรอนิกส์ กรณีที่มีการ. <span class='highlight'>จำหน่าย</span> ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.sichon-hospital.com/index.php/welcome/countPdf?pdfname=n32469_.pdf">
+            <div class="index-badge">4.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.sichon-hospital.com&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.sichon-hospital.com/index.php/welcome/countPdf?pdfname=n32469_.pdf" class="result-site-name tracked-link" target="_blank">www.sichon-hospital.com</a>
+                    <a href="https://www.sichon-hospital.com/index.php/welcome/countPdf?pdfname=n32469_.pdf" class="result-url tracked-link" target="_blank">https://www.sichon-hospital.com/index.php/wel...ame=n32469_.pdf</a>
+                </div>
+            </div>
+            <a href="https://www.sichon-hospital.com/index.php/welcome/countPdf?pdfname=n32469_.pdf" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>[PDF] เรื่อง ประกวดราคาจ้างซ่อมเครื่องเอกซเรย์คอมพิวเตอร์ จำนวน ๑ เครื่อง</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>(๓.๒) การยื่นข้อเสนอด้วยวิธีประกวดราคาอิเล็กทรอนิกส์ (e - bidding) ให้ผู้เข้าร่วม. ค้าที่ได้รับมอบหมายหรือมอบอำนาจตามข้อ (๓.๑) ดำเนินการซื้อเอกสารประกวดราคาอิเล็กทรอนิกส์ กรณีที่มีการ. <span class='highlight'>จำหน่าย</span> ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="http://www.finearts.go.th/main/view/62551-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88-12-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%82%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-48-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3">
+            <div class="index-badge">5.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.finearts.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="http://www.finearts.go.th/main/view/62551-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88-12-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%82%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-48-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3" class="result-site-name tracked-link" target="_blank">www.finearts.go.th</a>
+                    <a href="http://www.finearts.go.th/main/view/62551-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88-12-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%82%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-48-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3" class="result-url tracked-link" target="_blank">http://www.finearts.go.th/main/view/62551-ประ...จำนวน-48-รายการ</a>
+                </div>
+            </div>
+            <a href="http://www.finearts.go.th/main/view/62551-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88-12-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%82%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-48-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>กรมศิลปากร กระทรวงวัฒนธรรม</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ประกาศกรมศิลปากร โดยสำนักศิลปากรที่ 12 นครศรีธรรมราช เรื่อง <span class='highlight'>ขายทอดตลาด</span><span class='highlight'>พัสดุ</span><span class='highlight'>ชำรุด</span> <span class='highlight'>เสื่อมสภาพ</span>และไม่จำเป็นต้องใช้โนราชการ จำนวน 48 รายการ ตัวอย่างไฟล์แนบ PDF: เอกสารประกวดราคา
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.finearts.go.th/main/view/62551-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88-12-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%82%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-48-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3">
+            <div class="index-badge">6.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.finearts.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.finearts.go.th/main/view/62551-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88-12-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%82%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-48-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3" class="result-site-name tracked-link" target="_blank">www.finearts.go.th</a>
+                    <a href="https://www.finearts.go.th/main/view/62551-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88-12-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%82%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-48-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3" class="result-url tracked-link" target="_blank">https://www.finearts.go.th/main/view/62551-ปร...จำนวน-48-รายการ</a>
+                </div>
+            </div>
+            <a href="https://www.finearts.go.th/main/view/62551-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88-12-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%82%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-48-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>กรมศิลปากร กระทรวงวัฒนธรรม</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ประกาศกรมศิลปากร โดยสำนักศิลปากรที่ 12 นครศรีธรรมราช เรื่อง <span class='highlight'>ขายทอดตลาด</span><span class='highlight'>พัสดุ</span><span class='highlight'>ชำรุด</span> <span class='highlight'>เสื่อมสภาพ</span>และไม่จำเป็นต้องใช้โนราชการ จำนวน 48 รายการ ตัวอย่างไฟล์แนบ PDF: เอกสารประกวดราคา
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.glo.or.th/glo-news/procurement/total">
+            <div class="index-badge">7.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.glo.or.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.glo.or.th/glo-news/procurement/total" class="result-site-name tracked-link" target="_blank">www.glo.or.th</a>
+                    <a href="https://www.glo.or.th/glo-news/procurement/total" class="result-url tracked-link" target="_blank">https://www.glo.or.th/glo-news/procurement/total</a>
+                </div>
+            </div>
+            <a href="https://www.glo.or.th/glo-news/procurement/total" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ข่าวจัดซื้อจัดจ้าง - สำนักงานสลากกินแบ่งรัฐบาล</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span><span class='highlight'>ขายทอดตลาด</span>, จัดจ้าง, จัดซื้อ, เช่า, ซ่อม, อื่น ๆ. ประเภทเอกสาร, ใบสั่งซื้อ/สั่งจ้าง ... @glolottery; สำนักงานสลากกินแบ่งรัฐบาล 359 ถนนนนทบุรี ตำบลท่าทราย อำเภอ ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.nongsaeng.go.th/network-news">
+            <div class="index-badge">8.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.nongsaeng.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.nongsaeng.go.th/network-news" class="result-site-name tracked-link" target="_blank">www.nongsaeng.go.th</a>
+                    <a href="https://www.nongsaeng.go.th/network-news" class="result-url tracked-link" target="_blank">https://www.nongsaeng.go.th/network-news</a>
+                </div>
+            </div>
+            <a href="https://www.nongsaeng.go.th/network-news" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ข่าวสารภายนอก/ข่าวสารในเครือข่าย | เทศบาลตำบลหนองแซง (ทต ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>2 มี.ค. 69. เทศบาลตำบลไผ่ต่ำ ประกาศ <span class='highlight'>ขายทอดตลาด</span><span class='highlight'>พัสดุ</span><span class='highlight'>ครุภัณฑ์</span><span class='highlight'>ชำรุด</span> <span class='highlight'>เสื่อมสภาพ</span> ประจำปีงบประมาณ พ.ศ.2569. 27 ก.พ. 69.
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.baac.or.th/th/content-news.php?content_id=018901&amp;content_group_sub=0006&amp;content_group=3&amp;type=&amp;qua=&amp;page=1&amp;procure_cate=02&amp;procure_group=04&amp;inside=1">
+            <div class="index-badge">9.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.baac.or.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.baac.or.th/th/content-news.php?content_id=018901&content_group_sub=0006&content_group=3&type=&qua=&page=1&procure_cate=02&procure_group=04&inside=1" class="result-site-name tracked-link" target="_blank">www.baac.or.th</a>
+                    <a href="https://www.baac.or.th/th/content-news.php?content_id=018901&content_group_sub=0006&content_group=3&type=&qua=&page=1&procure_cate=02&procure_group=04&inside=1" class="result-url tracked-link" target="_blank">https://www.baac.or.th/th/content-news.php?co...oup=04&inside=1</a>
+                </div>
+            </div>
+            <a href="https://www.baac.or.th/th/content-news.php?content_id=018901&content_group_sub=0006&content_group=3&type=&qua=&page=1&procure_cate=02&procure_group=04&inside=1" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ประกวดราคาจ้างก่อสร้าง<span class='highlight'>อาคาร</span>สำนักงาน สาขาตลาดวาปีปทุม จังหวัด ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>... <span class='highlight'>ขายทอดตลาด</span>ทรัพย์สิน. รายงานการจัดซื้อจัดจ้าง. รายงานสรุปผลการจัดซื้อจัดจ้างราย ... ประกวดราคาจ้างก่อสร้าง<span class='highlight'>อาคาร</span>สำนักงาน สาขาตลาดวาปีปทุม จังหวัดมหาสารคาม โดยวิธีประกวดราคา ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://bpp2.go.th/2026/03/04/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8-%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B3%E0%B8%A3%E0%B8%A7/">
+            <div class="index-badge">10.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=bpp2.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://bpp2.go.th/2026/03/04/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8-%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B3%E0%B8%A3%E0%B8%A7/" class="result-site-name tracked-link" target="_blank">bpp2.go.th</a>
+                    <a href="https://bpp2.go.th/2026/03/04/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8-%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B3%E0%B8%A3%E0%B8%A7/" class="result-url tracked-link" target="_blank">https://bpp2.go.th/2026/03/04/ประกาศ-กองบังคับการตำรว/</a>
+                </div>
+            </div>
+            <a href="https://bpp2.go.th/2026/03/04/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8-%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B3%E0%B8%A3%E0%B8%A7/" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ประกาศ กองบังคับการตำรวจตระเวนชายแดนภาค 2 ลงวันที่ 4 มีนาคม 2569 ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ประกาศ <span class='highlight'>ขายทอดตลาด</span>สิ่งของหลวงประเภท<span class='highlight'>อาคาร</span>สิ่งปลูกสร้าง · 16 มกราคม 2025 watcharin · ประกาศสำนักงานตำรวจแห่งชาติเรื่อง ประกวดราคาจ้างก่อสร้างปรับปรุงบ้านพัก ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://gistda.or.th/ewtadmin//ewt/gistda_web/procurement_new_tem4.php?textseaech=&amp;type=&amp;proc=&amp;startdate=&amp;enddate=&amp;lang=TH&amp;page=1">
+            <div class="index-badge">11.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=gistda.or.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://gistda.or.th/ewtadmin//ewt/gistda_web/procurement_new_tem4.php?textseaech=&type=&proc=&startdate=&enddate=&lang=TH&page=1" class="result-site-name tracked-link" target="_blank">gistda.or.th</a>
+                    <a href="https://gistda.or.th/ewtadmin//ewt/gistda_web/procurement_new_tem4.php?textseaech=&type=&proc=&startdate=&enddate=&lang=TH&page=1" class="result-url tracked-link" target="_blank">https://gistda.or.th/ewtadmin//ewt/gistda_web...&lang=TH&page=1</a>
+                </div>
+            </div>
+            <a href="https://gistda.or.th/ewtadmin//ewt/gistda_web/procurement_new_tem4.php?textseaech=&type=&proc=&startdate=&enddate=&lang=TH&page=1" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ประกาศจัดซื้อจัดจ้าง | GISTDA สำนักงานพัฒนาเทคโนโลยีอวกาศและภูมิ ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span><span class='highlight'>ขายทอดตลาด</span>, สาระสำคัญของสัญญา/ สขร.1. วิธีจัดหา. All, สอบ ... ประกวดราคาจ้างเหมาปรับปรุงระบบควบคุมไฟฟ้า<span class='highlight'>อาคาร</span> Space inspirium ด้วยวิธีประกวดราคาอิเล็กทรอนิกส์ (e-bidding) ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.auct.co.th/auction-lot">
+            <div class="index-badge">12.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.auct.co.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.auct.co.th/auction-lot" class="result-site-name tracked-link" target="_blank">www.auct.co.th</a>
+                    <a href="https://www.auct.co.th/auction-lot" class="result-url tracked-link" target="_blank">https://www.auct.co.th/auction-lot</a>
+                </div>
+            </div>
+            <a href="https://www.auct.co.th/auction-lot" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ประมูลรถตามสาขาทั่วประเทศ | สหการประมูล - AUCT</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>เลือกประมูล<span class='highlight'>รถยนต์</span> มอเตอร์ไซค์ และทรัพย์สินอื่น ๆ แยกตามสาขาทั่วประเทศกับสหการประมูล พร้อมอัปเดตรถเข้าใหม่ในแต่ละพื้นที่.
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.facebook.com/profile.php/?id=61585519858830">
+            <div class="index-badge">13.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.facebook.com&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.facebook.com/profile.php/?id=61585519858830" class="result-site-name tracked-link" target="_blank">www.facebook.com</a>
+                    <a href="https://www.facebook.com/profile.php/?id=61585519858830" class="result-url tracked-link" target="_blank">https://www.facebook.com/profile.php/?id=61585519858830</a>
+                </div>
+            </div>
+            <a href="https://www.facebook.com/profile.php/?id=61585519858830" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ลุงนวย • ประกันภัย<span class='highlight'>รถยนต์</span> พรบ. - Facebook</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>... <span class='highlight'>ขายทอดตลาด</span>ทรัพย์สิน เพื่อบังคับชำระหนี้ต่อไป ✓เจ้าของรถ จะมีความผิดตามกฎหมาย ปรับเป็นเงิน ไม่เกิน 10,000 บาท และ หาก เจ้าของรถ นำรถที่ไม่จัดทำประกันภัย ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://radiosisaket.prd.go.th/">
+            <div class="index-badge">14.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=radiosisaket.prd.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://radiosisaket.prd.go.th/" class="result-site-name tracked-link" target="_blank">radiosisaket.prd.go.th</a>
+                    <a href="https://radiosisaket.prd.go.th/" class="result-url tracked-link" target="_blank">https://radiosisaket.prd.go.th/</a>
+                </div>
+            </div>
+            <a href="https://radiosisaket.prd.go.th/" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>สถานีวิทยุกระจายเสียงแห่งประเทศไทยจังหวัดศรีสะเกษ</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>สถานีวิทยุกระจายเสียงแห่งประเทศไทยจังหวัดศรีสะเกษ <span class='highlight'>ขายทอดตลาด</span><span class='highlight'>พัสดุ</span>-<span class='highlight'>ครุภัณฑ์</span><span class='highlight'>ชำรุด</span> <span class='highlight'>เสื่อมสภาพ</span>ที่ทางราชการเลิกใช้งาน (เสาอากาศ ระบบเอฟเอ็ม จำนวน 1ชุด) · 14 มกราคม ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://radionan.prd.go.th/th/radio/audio/category/rid/106">
+            <div class="index-badge">15.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=radionan.prd.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://radionan.prd.go.th/th/radio/audio/category/rid/106" class="result-site-name tracked-link" target="_blank">radionan.prd.go.th</a>
+                    <a href="https://radionan.prd.go.th/th/radio/audio/category/rid/106" class="result-url tracked-link" target="_blank">https://radionan.prd.go.th/th/radio/audio/category/rid/106</a>
+                </div>
+            </div>
+            <a href="https://radionan.prd.go.th/th/radio/audio/category/rid/106" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>สวท.น่าน - สถานีวิทยุกระจายเสียงแห่งประเทศไทยจังหวัดน่าน</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>สถานีวิทยุกระจายเสียงแห่งประเทศไทยจังหวัดเชียงราย มีความประสงค์ จะ<span class='highlight'>ขายทอดตลาด</span>ต้นไม้ที่โค่นล้มจากลมพายุในเขตที่ราช<span class='highlight'>พัสดุ</span> จำนวน 1 ต้นครั้งที่ 2 ในวันที่ 19 กันยายน ๒๕67 โดยลงทะเบียนและยื่นหลักฐาน ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.naewna.com/politic/columnist/65691">
+            <div class="index-badge">16.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.naewna.com&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.naewna.com/politic/columnist/65691" class="result-site-name tracked-link" target="_blank">www.naewna.com</a>
+                    <a href="https://www.naewna.com/politic/columnist/65691" class="result-url tracked-link" target="_blank">https://www.naewna.com/politic/columnist/65691</a>
+                </div>
+            </div>
+            <a href="https://www.naewna.com/politic/columnist/65691" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>สหรัฐ-อิสราเอล ถล่มโรงเรียนประถมอิหร่าน เด็กและครูตายกว่า 170 ชีวิต คือ ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>อาจ<span class='highlight'>ขายทอดตลาด</span>ก่อนศาลพิพากษา ทรัพย์สินเครือข่ายสแกมเมอร์หมื่นล้าน. 3 มี.ค. 2569 ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://songkhla.web.cpd.go.th/">
+            <div class="index-badge">17.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=songkhla.web.cpd.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://songkhla.web.cpd.go.th/" class="result-site-name tracked-link" target="_blank">songkhla.web.cpd.go.th</a>
+                    <a href="https://songkhla.web.cpd.go.th/" class="result-url tracked-link" target="_blank">https://songkhla.web.cpd.go.th/</a>
+                </div>
+            </div>
+            <a href="https://songkhla.web.cpd.go.th/" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>สำนักงานสหกรณ์จังหวัดสงขลา</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ดูทั้งหมด. 29 สิงหาคม 2568. ประกาศจังหวัดสงขลา เรื่อง <span class='highlight'>ขายทอดตลาด</span><span class='highlight'>พัสดุ</span><span class='highlight'>ชำรุด</span><span class='highlight'>เสื่อมสภาพ</span>. 25 มีนาคม 2568. รายงานการจัดซื้อจัดจ้างหรือการจัดหา<span class='highlight'>พัสดุ</span>และความก้าวหน้าการจัดซื้อจัดจ้างหรือการจัดหา<span class='highlight'>พัสดุ</span>.
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://songkhla.zoothailand.org/ewtadmin/ewt/songkhla_th/job_detail.php?ann_id=1114&amp;nav=1">
+            <div class="index-badge">18.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=songkhla.zoothailand.org&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://songkhla.zoothailand.org/ewtadmin/ewt/songkhla_th/job_detail.php?ann_id=1114&nav=1" class="result-site-name tracked-link" target="_blank">songkhla.zoothailand.org</a>
+                    <a href="https://songkhla.zoothailand.org/ewtadmin/ewt/songkhla_th/job_detail.php?ann_id=1114&nav=1" class="result-url tracked-link" target="_blank">https://songkhla.zoothailand.org/ewtadmin/ewt...n_id=1114&nav=1</a>
+                </div>
+            </div>
+            <a href="https://songkhla.zoothailand.org/ewtadmin/ewt/songkhla_th/job_detail.php?ann_id=1114&nav=1" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>หัวข้อประกาศ - สวนสัตว์สงขลา</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ประกาศ<span class='highlight'>ขายทอดตลาด</span>; สรุปผลการจัดซื้อจัดจ้างตามแบบ สขร1. ประจำปีงบประมาณ พ.ศ ... สวนสัตว์สงขลา เลขที่ 189 ม.5 ถ.สงขลา - นาทวี ต.เขารูปช้าง อ.เมือง จ.สงขลา 90000
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.yangkom.go.th/index.php">
+            <div class="index-badge">19.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.yangkom.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.yangkom.go.th/index.php" class="result-site-name tracked-link" target="_blank">www.yangkom.go.th</a>
+                    <a href="https://www.yangkom.go.th/index.php" class="result-url tracked-link" target="_blank">https://www.yangkom.go.th/index.php</a>
+                </div>
+            </div>
+            <a href="https://www.yangkom.go.th/index.php" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>องค์การบริหารส่วนตำบลยางค้อม เลขที่ 197 หมู่ที่ 5 ตำบลยางค้อม อำเภอ ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ประกาศองค์การบริหารส่วนตำบลยางค้อม เรื่องการ<span class='highlight'>ขายทอดตลาด</span><span class='highlight'>พัสดุ</span><span class='highlight'>ครุภัณฑ์</span><span class='highlight'>ชำรุด</span> <span class='highlight'>เสื่อมสภาพ</span> และไม่จำเป็นต้องใช้ในราชการ ประจำปีงบประมาณ พ.ศ 2568 :อ่าน 54 คน. องค์การ ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://www.facebook.com/AUCT.Official/posts/%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B8%94%E0%B9%88%E0%B8%A7%E0%B8%99-%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%A3%E0%B8%96%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%AB%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5-%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8E%E0%B8%A3%E0%B9%8C%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5-%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2-1030-%E0%B8%99%E0%B8%9E%E0%B8%B4%E0%B9%80/1384890257006599/">
+            <div class="index-badge">20.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.facebook.com&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://www.facebook.com/AUCT.Official/posts/%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B8%94%E0%B9%88%E0%B8%A7%E0%B8%99-%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%A3%E0%B8%96%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%AB%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5-%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8E%E0%B8%A3%E0%B9%8C%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5-%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2-1030-%E0%B8%99%E0%B8%9E%E0%B8%B4%E0%B9%80/1384890257006599/" class="result-site-name tracked-link" target="_blank">www.facebook.com</a>
+                    <a href="https://www.facebook.com/AUCT.Official/posts/%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B8%94%E0%B9%88%E0%B8%A7%E0%B8%99-%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%A3%E0%B8%96%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%AB%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5-%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8E%E0%B8%A3%E0%B9%8C%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5-%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2-1030-%E0%B8%99%E0%B8%9E%E0%B8%B4%E0%B9%80/1384890257006599/" class="result-url tracked-link" target="_blank">https://www.facebook.com/AUCT.Official/posts/...84890257006599/</a>
+                </div>
+            </div>
+            <a href="https://www.facebook.com/AUCT.Official/posts/%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B8%94%E0%B9%88%E0%B8%A7%E0%B8%99-%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%A3%E0%B8%96%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%AB%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5-%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8E%E0%B8%A3%E0%B9%8C%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5-%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2-1030-%E0%B8%99%E0%B8%9E%E0%B8%B4%E0%B9%80/1384890257006599/" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>เช็คด่วน ! ตารางประมูล<span class='highlight'>รถยนต์</span> (เงินติดล้อ) สหการประมูล สาขาสุราษฎร์ธานี ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ตารางประมูล<span class='highlight'>รถยนต์</span> (เงินติดล้อ) 📌สหการประมูล สาขาสุราษฎร์ธานี ⏰ เวลา 10.30 น. พิเศษ : เข้าชมสภาพรถจริงก่อนประมูลได้ &quot;ฟรี&quot; ไม่มีค่าใช้จ่าย ! สอบถามข้อมูลเพิ่มเติม 📞 02-0336555 Line@ :: @ ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://egp.nmu.ac.th/Procurement/ProcurementPlan">
+            <div class="index-badge">21.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=egp.nmu.ac.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://egp.nmu.ac.th/Procurement/ProcurementPlan" class="result-site-name tracked-link" target="_blank">egp.nmu.ac.th</a>
+                    <a href="https://egp.nmu.ac.th/Procurement/ProcurementPlan" class="result-url tracked-link" target="_blank">https://egp.nmu.ac.th/Procurement/ProcurementPlan</a>
+                </div>
+            </div>
+            <a href="https://egp.nmu.ac.th/Procurement/ProcurementPlan" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>แผนการจัดซื้อจัดจ้าง</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>... <span class='highlight'>ขายทอดตลาด</span> ตอบข้อซักถาม ความก้าวหน้าการจัดซื้อจัดจ้างหรือการจัดหา<span class='highlight'>พัสดุ</span> ... ฝ่ายบริหารงานก่อสร้างบำรุงรักษา<span class='highlight'>อาคาร</span>และ<span class='highlight'>พัสดุ</span>กลาง สำนักงานอธิการบดี มหาวิทยาลัยนวมินทราธิราช
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="http://www.pakphanang.ac.th/mainpage">
+            <div class="index-badge">22.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.pakphanang.ac.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="http://www.pakphanang.ac.th/mainpage" class="result-site-name tracked-link" target="_blank">www.pakphanang.ac.th</a>
+                    <a href="http://www.pakphanang.ac.th/mainpage" class="result-url tracked-link" target="_blank">http://www.pakphanang.ac.th/mainpage</a>
+                </div>
+            </div>
+            <a href="http://www.pakphanang.ac.th/mainpage" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>โรงเรียนปากพนัง</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 24 ชม. — </span>ประกาศ เรื่อง การ<span class='highlight'>ขายทอดตลาด</span><span class='highlight'>พัสดุ</span> <span class='highlight'>ชำรุด</span> <span class='highlight'>เสื่อมสภาพ</span> ประจำปีงบประมาณ 2567 ( 08 ส.ค. 67 ) · งบทดลองประจำเดือน ประจำปีงบประมาณ 2567 (มิถุนายน 2567) ( 23 ก.ค. 67 ) ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://procurement.cmru.ac.th/">
+            <div class="index-badge">23.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=procurement.cmru.ac.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://procurement.cmru.ac.th/" class="result-site-name tracked-link" target="_blank">procurement.cmru.ac.th</a>
+                    <a href="https://procurement.cmru.ac.th/" class="result-url tracked-link" target="_blank">https://procurement.cmru.ac.th/</a>
+                </div>
+            </div>
+            <a href="https://procurement.cmru.ac.th/" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>procurement</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 7 วัน — </span>การประมูล<span class='highlight'>ขายทอดตลาด</span>เศษ<span class='highlight'>วัสดุ</span>และซาก<span class='highlight'>ครุภัณฑ์</span>จำนวน๒๐๓รายการ [25 ก.พ. 69] ประกวดราคาซื้อเครื่องมัลติมีเดียโปรเจคเตอร์แบบเลเซอร์ระดับwuxgaขนาด๔๖๐๐ansilumensพร้อมติดตั้งตำบลสะลวงอำเภอแม่ริม ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://thaihad.go.th/select_news.php?news_id=1687">
+            <div class="index-badge">24.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=thaihad.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://thaihad.go.th/select_news.php?news_id=1687" class="result-site-name tracked-link" target="_blank">thaihad.go.th</a>
+                    <a href="https://thaihad.go.th/select_news.php?news_id=1687" class="result-url tracked-link" target="_blank">https://thaihad.go.th/select_news.php?news_id=1687</a>
+                </div>
+            </div>
+            <a href="https://thaihad.go.th/select_news.php?news_id=1687" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>www ... - องค์การบริหารส่วนตำบลท้ายหาด อำเภอเมือง จังหวัดสมุทรสงคราม</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 7 วัน — </span>ด้วยองค์การบริหารส่วนตำบลท้ายหาด มีความประสงค์จะดำเนินการ<span class='highlight'>ขายทอดตลาด</span><span class='highlight'>ครุภัณฑ์</span>ที่มีสภาพ<span class='highlight'>ชำรุด</span> <span class='highlight'>เสื่อมสภาพ</span> และไม่มีความจำเป็นต้องใช้ในราชการ จำนวน 18 รายการ โดยวิธีการประมูลเปิดเผยด้วยวาจา ในวัน ...
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://nakhonratchasima.m-society.go.th/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5-50/">
+            <div class="index-badge">25.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=nakhonratchasima.m-society.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://nakhonratchasima.m-society.go.th/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5-50/" class="result-site-name tracked-link" target="_blank">nakhonratchasima.m-society.go.th</a>
+                    <a href="https://nakhonratchasima.m-society.go.th/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5-50/" class="result-url tracked-link" target="_blank">https://nakhonratchasima.m-society.go.th/ประก...วัดนครราชสี-50/</a>
+                </div>
+            </div>
+            <a href="https://nakhonratchasima.m-society.go.th/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5-50/" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ประกาศจังหวัดนครราชสีมา เรื่อง การ<span class='highlight'>ขายทอดตลาด</span><span class='highlight'>ครุภัณฑ์</span>ที่<span class='highlight'>ชำรุด</span> เสื่อม ...</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 7 วัน — </span>ประกาศจังหวัดนครราชสีมา เรื่อง การ<span class='highlight'>ขายทอดตลาด</span><span class='highlight'>ครุภัณฑ์</span>ที่<span class='highlight'>ชำรุด</span> <span class='highlight'>เสื่อมสภาพ</span> และไม่จำเป็นต้องใช้ในหน่วยงานราชการ สำนักงานพัฒนาสังคมและความมั่นคงของมนุษย์จังหวัดนครราชสีมา.
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://spm.thaigov.go.th/th/ann-pcm?id=4750">
+            <div class="index-badge">26.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=spm.thaigov.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://spm.thaigov.go.th/th/ann-pcm?id=4750" class="result-site-name tracked-link" target="_blank">spm.thaigov.go.th</a>
+                    <a href="https://spm.thaigov.go.th/th/ann-pcm?id=4750" class="result-url tracked-link" target="_blank">https://spm.thaigov.go.th/th/ann-pcm?id=4750</a>
+                </div>
+            </div>
+            <a href="https://spm.thaigov.go.th/th/ann-pcm?id=4750" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ประกาศจัดซื้อจัดจ้าง | สำนักเลขาธิการนายกรัฐมนตรี</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 7 วัน — </span>การจัด<span class='highlight'>จำหน่าย</span><span class='highlight'>พัสดุ</span>. ประกาศ<span class='highlight'>ขายทอดตลาด</span> · แผนการจัดซื้อจัดจ้างประจำปี ประกาศ ... สำนักเลขาธิการนายกรัฐมนตรี ทำเนียบรัฐบาล 1 ถนนนครปฐม แขวงดุสิต เขตดุสิต กรุงเทพมหานคร 10300.
+            </div>
+        </div>
+        
+        <div class="result-item" data-url="https://dsdw.go.th/tor/Detail/2034">
+            <div class="index-badge">27.</div>
+            <button class="mark-read-btn" title="อ่านแล้ว / ยังไม่ได้อ่าน">✓</button>
+            <div class="result-top">
+                <div class="result-icon">
+                    <img src="https://s2.googleusercontent.com/s2/favicons?domain=dsdw.go.th&sz=32" alt="icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWY2MzY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiPjwvY2lyY2xlPjxsaW5lIHgxPSIyIiB5MT0iMTIiIHgyPSIyMiIgeTI9IjEyIj48L2xpbmU+PHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTBhMTUuMyAxNS4zIDAgMCAxLTQgMTBhMTUuMyAxNS4zIDAgMCAxLTQtMTBBMTUuMyAxNS4zIDAgMCAxIDEyIDJ6Ij48L3BhdGg+PC9zdmc+' " />
+                </div>
+                <div class="result-site-info">
+                    <a href="https://dsdw.go.th/tor/Detail/2034" class="result-site-name tracked-link" target="_blank">dsdw.go.th</a>
+                    <a href="https://dsdw.go.th/tor/Detail/2034" class="result-url tracked-link" target="_blank">https://dsdw.go.th/tor/Detail/2034</a>
+                </div>
+            </div>
+            <a href="https://dsdw.go.th/tor/Detail/2034" class="result-title tracked-link LC20lb" target="_blank">
+                <h3>ประกาศประกวดราคา กรมพัฒนาสังคมและสวัสดิการ</h3>
+            </a>
+            <div class="result-snippet">
+                <span class="date-badge">(01:00) ภายใน 7 วัน — </span>ประกาศกรมพัฒนาสังคมและสวัสดิการ เรื่อง หลักเกณฑ์และเงื่อนไขการ<span class='highlight'>จำหน่าย</span><span class='highlight'>พัสดุ</span> ประจำปีงบประมาณ ๒๕๖๘ โดยวิธี<span class='highlight'>ขายทอดตลาด</span> นิคมสร้างตนเองตากฟ้า จังหวัดนครสวรรค์. วันที่ประกาศ : 26 ก.พ. 2569.
+            </div>
+        </div>
+        
+            </div>
+        </div>
+
+        <script>
+            const STORAGE_KEY = 'viewedLinks_v2';
+
+            function getViewed() {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            }
+            function saveViewed(arr) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+            }
+            function updateStats() {
+                const total = document.querySelectorAll('.result-item').length;
+                const read  = document.querySelectorAll('.result-item.read').length;
+                const bar   = document.getElementById('stats-bar');
+                if (bar) bar.textContent = ` — อ่านแล้ว ${read} / ${total} รายการ`;
+            }
+            function clearAllRead() {
+                saveViewed([]);
+                document.querySelectorAll('.result-item.read').forEach(el => el.classList.remove('read'));
+                updateStats();
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                let viewed = getViewed();
+
+                document.querySelectorAll('.result-item').forEach(item => {
+                    const url = item.dataset.url;
+                    const btn = item.querySelector('.mark-read-btn');
+
+                    // Restore read state
+                    if (viewed.includes(url)) item.classList.add('read');
+
+                    // Mark-as-read button
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        let v = getViewed();
+                        if (item.classList.contains('read')) {
+                            // Toggle back to unread
+                            item.classList.remove('read');
+                            v = v.filter(u => u !== url);
+                        } else {
+                            item.classList.add('read');
+                            if (!v.includes(url)) v.push(url);
+                        }
+                        saveViewed(v);
+                        updateStats();
+                    });
+
+                    // Clicking any link also marks as read
+                    item.querySelectorAll('.tracked-link').forEach(link => {
+                        link.addEventListener('click', function() {
+                            let v = getViewed();
+                            if (!v.includes(url)) {
+                                v.push(url);
+                                saveViewed(v);
+                            }
+                            item.classList.add('read');
+                            updateStats();
+                        });
+                    });
+                });
+
+                updateStats();
+            });
+        </script>
+    </body>
+    </html>
+    
