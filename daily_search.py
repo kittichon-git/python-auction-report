@@ -61,8 +61,7 @@ QUERIES = [
     "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (สงขลา OR สตูล OR ตรัง OR พัทลุง OR ปัตตานี OR ยะลา OR นราธิวาส) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
     
     # กลุ่ม E — Term พิเศษเฉพาะเว็บ
-    "ขายทอดตลาด" (site:webportal.bangkok.go.th OR site:prd.go.th OR site:coj.go.th),
-    "ขายทอดตลาด site:.prd.go.th"
+    "ขายทอดตลาด" (site:webportal.bangkok.go.th OR site:prd.go.th OR site:coj.go.th)
 ]
 
 # Filtering Words
@@ -693,3 +692,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
