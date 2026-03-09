@@ -258,7 +258,13 @@ def generate_html_report(results, date_str):
 def generate_index_html():
     import glob
     files = sorted(glob.glob(os.path.join(OUTPUT_DIR, "result_*_daily.html")), reverse=True)
-    links = "".join([f'<li><a href="{os.path.basename(f)}">รายงานวันที่ {re.search(r"(\d+_\d+_\d+)", f).group(1).replace("_","/")}</a></li>' for f in files])
+    links_list = []
+    for f in files:
+        match = re.search(r"(\d+_\d+_\d+)", f)
+        if match:
+            date_part = match.group(1).replace("_", "/")
+            links_list.append(f'<li><a href="{os.path.basename(f)}">รายงานวันที่ {date_part}</a></li>')
+    links = "".join(links_list)
     with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(f"<html><body style='font-family:sans-serif;padding:40px'><h1>📋 รายงานทั้งหมด</h1><ul>{links}</ul></body></html>")
 
