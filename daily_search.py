@@ -34,33 +34,27 @@ if not SERPER_API_KEY or SERPER_API_KEY == "YOUR_SERPER_API_KEY_HERE":
 
 # List of unique search queries (add/remove entries freely — count updates automatically)
 QUERIES = [
-    # กลุ่ม A — Term หลัก
+    # กลุ่ม A — Term หลัก (ปรับปรุง: นำ "ราชการ" ออกเพื่อให้กว้างขึ้น)
     "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน OR วัสดุ) (ชำรุด OR เสื่อมสภาพ OR \"ไม่จำเป็น\") -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:instagram.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
     "ประกาศ \"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:instagram.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
     "\"ประมูลขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) -บังคับคดี -\"รอขาย\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "(จำหน่าย OR \"ขายพัสดุ\") (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (ชำรุด OR เสื่อมสภาพ) ราชการ -บังคับคดี -\"รอขาย\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    
-    # กลุ่ม B — แยกตามประเภทสินทรัพย์
+    "(จำหน่าย OR \"ขายพัสดุ\" OR \"ขายครุภัณฑ์\") (พัสดุ OR ครุภัณฑ์) (ชำรุด OR เสื่อมสภาพ OR \"ไม่จำเป็น\") -บังคับคดี -\"รอขาย\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
+    "(จำหน่าย OR \"ขายพัสดุ\") (พัสดุ OR ครุภัณฑ์) (เฉพาะเจาะจง OR \"เจรจาตกลงราคา\") -บังคับคดี -site:youtube.com -site:led.go.th",
+
+    # กลุ่มใหม่: เจาะจงหน่วยงาน (Targeted Agencies)
+    "+\"สำนักงาน\" +\"จังหวัด\" +\"ขายทอดตลาด\" -site:prd.go.th -site:led.go.th -site:facebook.com -site:youtube.com -site:gprocurement.go.th -site:pea.co.th -site:egat.go.th -\"องค์การบริหารส่วนตำบล\" -\"เทศบาล\"",
+    "+\"สำนักงาน\" +\"จังหวัด\" +\"จำหน่ายพัสดุ\" -site:prd.go.th -site:led.go.th -site:facebook.com -site:youtube.com -site:gprocurement.go.th -site:pea.co.th -site:egat.go.th -\"องค์การบริหารส่วนตำบล\" -\"เทศบาล\"",
+    "+\"โรงเรียน\" +\"ขายทอดตลาด\" -site:prd.go.th -site:led.go.th -site:facebook.com -site:youtube.com -site:gprocurement.go.th -\"เทศบาล\" -\"องค์การบริหาร\" -\"ผู้ชนะ\" -site:tiktok.com -\"บังคับคดี\" -site:instagram.com",
+    "+\"โรงพยาบาล\" +\"ขายทอดตลาด\" -site:prd.go.th -site:led.go.th -site:facebook.com -site:youtube.com -site:gprocurement.go.th -\"เทศบาล\" -\"องค์การบริหาร\" -\"ผู้ชนะ\" -site:tiktok.com -\"บังคับคดี\" -site:instagram.com",
+    "+\"มหาวิทยาลัย\" +\"ขายทอดตลาด\" -site:prd.go.th -site:led.go.th -site:facebook.com -site:youtube.com -site:gprocurement.go.th -\"เทศบาล\" -\"องค์การบริหาร\" -\"ผู้ชนะ\" -site:tiktok.com -\"บังคับคดี\" -site:instagram.com",
+    "+\"สำนักงานเขตพื้นที่การศึกษา\" +\"ขายทอดตลาด\" -site:prd.go.th -site:led.go.th -site:facebook.com -site:youtube.com -site:gprocurement.go.th -\"เทศบาล\" -\"องค์การบริหาร\" -\"ผู้ชนะ\" -site:tiktok.com -\"บังคับคดี\" -site:instagram.com",
+    "\"ขายทอดตลาด\" site:ac.th",
+
+    # กลุ่มเดิมอื่นๆ
     "\"ขายทอดตลาด\" (รถยนต์ OR รถตู้ OR รถบรรทุก OR รถกระบะ OR ยานพาหนะ OR \"ครุภัณฑ์ยานพาหนะ\") -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (อาคาร OR \"สิ่งปลูกสร้าง\" OR รื้อถอน) (โรงเรียน OR ราชการ OR จังหวัด OR หน่วยงาน) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th",
+    "\"ขายทอดตลาด\" (อาคาร OR \"สิ่งปลูกสร้าง\" OR รื้อถอน) (โรงเรียน OR จังหวัด OR หน่วยงาน) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th",
     "\"ขายทอดตลาด\" (ครุภัณฑ์ OR เครื่องมือ OR อุปกรณ์) (การแพทย์ OR โรงพยาบาล OR สาธารณสุข) (ชำรุด OR เสื่อมสภาพ) -บังคับคดี -\"รอขาย\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th",
-    
-    # กลุ่ม C — หน่วยงาน
     "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (จังหวัด OR สำนักงาน OR กรม OR กอง OR ศูนย์ OR สำนัก OR องค์การ OR เทศบาล OR อบต OR โรงพยาบาล OR มหาวิทยาลัย OR โรงเรียน OR ศาล) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    
-    # กลุ่ม D — แยกตามภูมิภาค
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (กรุงเทพ OR กรุงเทพมหานคร OR นนทบุรี OR ปทุมธานี OR สมุทรปราการ OR สมุทรสาคร OR นครปฐม) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (อยุธยา OR \"พระนครศรีอยุธยา\" OR สระบุรี OR ลพบุรี OR สิงห์บุรี OR อ่างทอง OR ชัยนาท OR สุพรรณบุรี OR กาญจนบุรี OR ราชบุรี) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (ชลบุรี OR ระยอง OR จันทบุรี OR ตราด OR ฉะเชิงเทรา OR ปราจีนบุรี OR สระแก้ว) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (ประจวบคีรีขันธ์ OR เพชรบุรี OR สมุทรสงคราม OR ตาก OR กาญจนบุรี) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (ขอนแก่น OR อุดรธานี OR หนองคาย OR เลย OR นครพนม OR สกลนคร OR มุกดาหาร OR หนองบัวลำภู OR บึงกาฬ) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (นครราชสีมา OR บุรีรัมย์ OR สุรินทร์ OR ศรีสะเกษ OR อุบลราชธานี OR ยโสธร OR อำนาจเจริญ OR มหาสารคาม OR ร้อยเอ็ด OR กาฬสินธุ์) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (เชียงใหม่ OR เชียงราย OR ลำปาง OR ลำพูน OR แม่ฮ่องสอน OR พะเยา OR แพร่ OR น่าน) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (พิษณุโลก OR สุโขทัย OR อุตรดิตถ์ OR กำแพงเพชร OR พิจิตร OR เพชรบูรณ์ OR นครสวรรค์ OR อุทัยธานี) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (สุราษฎร์ธานี OR ชุมพร OR ระนอง OR นครศรีธรรมราช OR กระบี่ OR พังงา OR ภูเก็ต) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    "\"ขายทอดตลาด\" (พัสดุ OR ครุภัณฑ์ OR ทรัพย์สิน) (สงขลา OR สตูล OR ตรัง OR พัทลุง OR ปัตตานี OR ยะลา OR นราธิวาส) -บังคับคดี -\"รอขาย\" -\"ธนาคารยึด\" -\"ที่ดิน\" -site:youtube.com -site:x.com -site:tiktok.com -site:led.go.th -site:bidding.pea.co.th",
-    
-    # กลุ่ม E — Term พิเศษเฉพาะเว็บ
     "\"ขายทอดตลาด\" (site:webportal.bangkok.go.th OR site:prd.go.th OR site:coj.go.th)",
     "ขายทอดตลาด site:.prd.go.th"
 ]
@@ -69,10 +63,16 @@ QUERIES = [
 NEGATIVE_WORDS = [
     "ผู้ชนะ", "ยกเลิก", "รปภ",
     "มือสอง", "ทุบตึก", "ตัวแทน", "เช่าซื้อ", "อาคารพาณิชย์", "ขายอาคาร",
-    "บังคับคดี", "รอขาย", "ธนาคารยึด", "ที่ดิน", "ธนาคาร", "อย่างไร", "ไหม", "หรือไม่"
+    "บังคับคดี", "รอขาย", "ธนาคารยึด", "ที่ดิน", "ธนาคาร", "อย่างไร", "ไหม"
 ]
-NEGATIVE_DOMAINS = ["tiktok.com", "youtube.com", "instagram.com", "x.com", "led.go.th", "bidding.pea.co.th"]
-HIGHLIGHT_WORDS = ["ขายทอดตลาด", "จำหน่าย", "ประกาศขาย", "ครุภัณฑ์", "พัสดุ", "วัสดุ", "รถยนต์", "อาคาร", "รื้อถอน", "เสื่อมสภาพ", "ชำรุด"]
+NEGATIVE_DOMAINS = [
+    "tiktok.com", "youtube.com", "instagram.com", "x.com", "led.go.th", 
+    "bidding.pea.co.th", "gprocurement.go.th", "pea.co.th", "egat.co.th"
+]
+HIGHLIGHT_WORDS = [
+    "ขายทอดตลาด", "จำหน่าย", "ประกาศขาย", "ครุภัณฑ์", "พัสดุ", "วัสดุ", "รถยนต์", 
+    "อาคาร", "รื้อถอน", "เสื่อมสภาพ", "ชำรุด", "ไม่จำเป็นต้องใช้งาน", "อบต", "เทศบาล"
+]
 
 # Directories
 # If running in GitHub Actions, use current directory
@@ -89,7 +89,7 @@ def search_serper(query, tbs):
         "tbs": tbs,  # "qdr:d" for 24h, "qdr:w" for 7 days
         "gl": "th",  # Thailand
         "hl": "th",  # Thai language
-        "num": 50    # Try to fetch up to 50 results
+        "num": 100    # Fetch up to 100 results as requested
     })
     headers = {
         'X-API-KEY': SERPER_API_KEY,
