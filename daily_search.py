@@ -61,13 +61,16 @@ QUERIES = [
 
 # Filtering Words
 NEGATIVE_WORDS = [
-    "ผู้ชนะ", "ยกเลิก", "รปภ",
+    "รปภ",
     "มือสอง", "ทุบตึก", "ตัวแทน", "เช่าซื้อ", "อาคารพาณิชย์", "ขายอาคาร",
-    "บังคับคดี", "รอขาย", "ธนาคารยึด", "ที่ดิน", "ธนาคาร", "อย่างไร", "ไหม"
+    "บังคับคดี", "รอขาย", "ธนาคารยึด", "ที่ดิน", "ธนาคาร", "อย่างไร", "ไหม",
+    "ยึดบ้าน", "วางแนวยึด", "อายัด", "ยึดอายัด", "คู่มือปฏิบัติงาน"
 ]
 NEGATIVE_DOMAINS = [
     "tiktok.com", "youtube.com", "instagram.com", "x.com", "led.go.th", 
-    "bidding.pea.co.th", "gprocurement.go.th", "pea.co.th", "egat.co.th"
+    "bidding.pea.co.th", "gprocurement.go.th", "pea.co.th", "egat.go.th",
+    "dailynews.co.th", "line.me", "auct.co.th", "mgronline.com", 
+    "sia.co.th", "bam.co.th", "threads.net", "naewna.com"
 ]
 HIGHLIGHT_WORDS = [
     "ขายทอดตลาด", "จำหน่าย", "ประกาศขาย", "ครุภัณฑ์", "พัสดุ", "วัสดุ", "รถยนต์", 
