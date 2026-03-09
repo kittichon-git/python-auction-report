@@ -258,15 +258,49 @@ def generate_html_report(results, date_str):
 def generate_index_html():
     import glob
     files = sorted(glob.glob(os.path.join(OUTPUT_DIR, "result_*_daily.html")), reverse=True)
+    
     links_list = []
     for f in files:
         match = re.search(r"(\d+_\d+_\d+)", f)
         if match:
             date_part = match.group(1).replace("_", "/")
-            links_list.append(f'<li><a href="{os.path.basename(f)}">รายงานวันที่ {date_part}</a></li>')
+            links_list.append(f'<li><a href="{os.path.basename(f)}" class="report-link">📅 รายงานประจำวันที่ {date_part}</a></li>')
     links = "".join(links_list)
+    
+    ict_now = get_ict_now()
+    updated_at = ict_now.strftime('%d/%m/%Y %H:%M')
+    
+    html_template = f"""
+    <!DOCTYPE html>
+    <html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Auction Report Sitemap</title>
+        <style>
+            body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 40px; display: flex; flex-direction: column; align-items: center; }}
+            .container {{ background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 100%; max-width: 600px; }}
+            h1 {{ color: #2c3e50; text-align: center; margin-bottom: 30px; font-size: 24px; }}
+            ul {{ list-style: none; padding: 0; }}
+            li {{ margin-bottom: 12px; }}
+            .report-link {{ display: block; padding: 15px 20px; background-color: #ffffff; border: 1px solid #e1e8ed; border-radius: 8px; text-decoration: none; color: #34495e; font-weight: 500; transition: all 0.3s ease; }}
+            .report-link:hover {{ background-color: #3498db; color: white; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }}
+            .footer {{ margin-top: 30px; color: #7f8c8d; font-size: 14px; text-align: center; }}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>📋 รายการรายงานการค้นหาทั้งหมด</h1>
+            <ul>
+                {links}
+            </ul>
+        </div>
+        <div class="footer">อัปเดตล่าสุด: {updated_at}</div>
+    </body>
+    </html>
+    """
     with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
-        f.write(f"<html><body style='font-family:sans-serif;padding:40px'><h1>📋 รายงานทั้งหมด</h1><ul>{links}</ul></body></html>")
+        f.write(html_template)
 
 def main():
     ict_now = get_ict_now()
