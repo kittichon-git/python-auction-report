@@ -182,17 +182,20 @@ def generate_html_report(results, date_str):
             .container {{ max-width: 652px; margin: 0; }}
             h1 {{ font-size:32px; font-weight:bold; border-bottom:3px solid #1a0dab; padding-bottom:10px; margin-bottom:20px; }}
             .meta {{ font-size:14px; color:#70757a; margin-bottom:25px; border-bottom:1px solid #ebebeb; padding-bottom:15px; }}
-            .result-item {{ margin-bottom:28px; padding:10px 14px; border-left:4px solid transparent; border-radius:4px; position:relative; }}
+            .result-item {{ margin-bottom:28px; padding:10px 14px; border-left:4px solid transparent; border-radius:4px; position:relative; transition: background-color 0.25s, opacity 0.25s; }}
             .result-item.read {{ background-color:#f5f5f5; opacity:0.55; border-left-color:#bdbdbd; }}
             .result-item.read h3 {{ text-decoration:line-through; color:#9e9e9e; }}
-            .mark-read-btn {{ position:absolute; top:10px; right:10px; border:1.5px solid #bdbdbd; border-radius:50%; width:28px; height:28px; cursor:pointer; color:#bdbdbd; display:flex; align-items:center; justify-content:center; }}
+            .result-item.read .result-snippet {{ color: #bdbdbd; }}
+            .mark-read-btn {{ position:absolute; top:10px; right:10px; border:1.5px solid #bdbdbd; border-radius:50%; width:28px; height:28px; cursor:pointer; color:#bdbdbd; display:flex; align-items:center; justify-content:center; transition: all 0.2s; }}
+            .mark-read-btn:hover {{ background-color: #e8f5e9; border-color: #4caf50; color: #4caf50; }}
             .result-item.read .mark-read-btn {{ border-color:#4caf50; color:#4caf50; background-color:#e8f5e9; }}
-            .result-top {{ display:flex; align-items:center; margin-bottom:4px; }}
-            .result-icon {{ background-color:#f1f3f4; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; margin-right:12px; overflow:hidden; }}
+            .result-top {{ display:flex; align-items:center; margin-bottom:4px; padding-right: 36px; }}
+            .result-icon {{ background-color:#f1f3f4; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; margin-right:12px; overflow:hidden; flex-shrink:0; }}
             .result-site-name {{ font-size:14px; color:#202124; text-decoration:none; }}
-            .result-url {{ font-size:12px; color:#4d5156; text-decoration:none; }}
-            .result-title h3 {{ font-size:20px; color:#1a0dab; margin:0; font-weight:normal; }}
-            .result-snippet {{ font-size:14px; line-height:1.58; color:#4d5156; }}
+            .result-url {{ font-size:12px; color:#4d5156; text-decoration:none; word-wrap: break-word; }}
+            .result-title h3 {{ font-size:20px; color:#1a0dab; margin:0; font-weight:normal; display: inline; transition: color 0.25s; }}
+            .result-title:hover h3 {{ text-decoration: underline; }}
+            .result-snippet {{ font-size:14px; line-height:1.58; color:#4d5156; transition: color 0.25s; }}
             .highlight {{ color:#c5221f; font-weight:bold; }}
             .index-badge {{ position:absolute; left:-35px; top:15px; font-size:14px; color:#70757a; font-weight:bold; }}
         </style>
@@ -205,21 +208,40 @@ def generate_html_report(results, date_str):
         </div>
         <script>
             const STORAGE_KEY = 'viewedLinks_v2';
-            function update() {{
-                const viewed = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-                document.querySelectorAll('.result-item').forEach(it => {{
-                    if (viewed.includes(it.dataset.url)) it.classList.add('read');
-                    it.querySelector('.mark-read-btn').onclick = () => {{
-                        let v = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-                        if (it.classList.toggle('read')) v.push(it.dataset.url);
-                        else v = v.filter(u => u !== it.dataset.url);
-                        localStorage.setItem(STORAGE_KEY, JSON.stringify(v));
-                        document.getElementById('stats').innerText = ` — อ่านแล้ว ${{v.length}} / ${{document.querySelectorAll('.result-item').length}}`;
-                    }};
-                }});
-                document.getElementById('stats').innerText = ` — อ่านแล้ว ${{viewed.length}} / ${{document.querySelectorAll('.result-item').length}}`;
+            function getViewed() {{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }}
+            function saveViewed(arr) {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }}
+            function updateStats() {{
+                const total = document.querySelectorAll('.result-item').length;
+                const read = document.querySelectorAll('.result-item.read').length;
+                document.getElementById('stats').innerText = ` — อ่านแล้ว ${{read}} / ${{total}}`;
             }}
-            update();
+
+            document.addEventListener('DOMContentLoaded', function() {{
+                const viewed = getViewed();
+                document.querySelectorAll('.result-item').forEach(it => {{
+                    const url = it.dataset.url;
+                    if (viewed.includes(url)) it.classList.add('read');
+
+                    it.querySelector('.mark-read-btn').onclick = (e) => {{
+                        e.stopPropagation();
+                        let v = getViewed();
+                        if (it.classList.toggle('read')) {{ if(!v.includes(url)) v.push(url); }}
+                        else {{ v = v.filter(u => u !== url); }}
+                        saveViewed(v);
+                        updateStats();
+                    }};
+
+                    it.querySelectorAll('.tracked-link').forEach(link => {{
+                        link.onclick = () => {{
+                            let v = getViewed();
+                            if(!v.includes(url)) {{ v.push(url); saveViewed(v); }}
+                            it.classList.add('read');
+                            updateStats();
+                        }};
+                    }});
+                }});
+                updateStats();
+            }});
         </script>
     </body>
     </html>
@@ -240,11 +262,11 @@ def generate_html_report(results, date_str):
             <div class="result-top">
                 <div class="result-icon"><img src="{favicon}" width="16"></div>
                 <div class="result-site-info">
-                    <a href="{url}" class="result-site-name" target="_blank">{domain}</a><br>
-                    <a href="{url}" class="result-url" target="_blank">{url[:60]}...</a>
+                    <a href="{url}" class="result-site-name tracked-link" target="_blank">{domain}</a><br>
+                    <a href="{url}" class="result-url tracked-link" target="_blank">{url[:60]}...</a>
                 </div>
             </div>
-            <a href="{url}" style="text-decoration:none" target="_blank"><h3>{title}</h3></a>
+            <a href="{url}" class="result-title tracked-link" style="text-decoration:none" target="_blank"><h3>{title}</h3></a>
             <div class="result-snippet"><span style="color:#70757a">{badge} — </span>{snippet}</div>
         </div>
         """
