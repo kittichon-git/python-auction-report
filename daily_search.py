@@ -1,7 +1,7 @@
 import json
 import os
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import urllib.request
 import urllib.parse
 import urllib.error
@@ -108,6 +108,11 @@ HIGHLIGHT_WORDS = [
 ]
 
 OUTPUT_DIR = "." if os.getenv("GITHUB_ACTIONS") else "D:/project deep search"
+# ── Supabase ──────────────────────────────────────────────────────────────────
+SUPABASE_URL = os.getenv("SUPABASE_URL", "https://pfnhxozecazjxjgpfrzu.supabase.co")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "sb_publishable_9idaI5irCf8jia0qABYyhA_P5VoRRBo")
+ALLOWED_SUFFIXES = (".go.th", ".ac.th", ".or.th")
+
 
 # ==========================================
 # FUNCTIONS
@@ -332,6 +337,104 @@ def generate_index_html():
     with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(html_template)
 
+
+def save_to_supabase(results: list) -> int:
+    """บันทึกผลลัพธ์ลง Supabase crawler_results — upsert on_conflict url"""
+    if not results:
+        return 0
+    try:
+        from supabase import create_client
+        client = create_client(SUPABASE_URL, SUPABASE_KEY)
+        today  = date.today().isoformat()
+
+        payload = []
+        for r in results:
+            url    = r.get("link", "")
+            if not url:
+                continue
+            domain = urllib.parse.urlparse(url).netloc
+            kw_hit = next(
+                (kw for kw in HIGHLIGHT_WORDS if kw in r.get("snippet", "") or kw in r.get("title", "")),
+                "ขายทอดตลาด"
+            )
+            payload.append({
+                "url":         url,
+                "domain":      domain,
+                "title":       r.get("title", "")[:200],
+                "snippet":     r.get("snippet", "")[:500],
+                "keyword_hit": kw_hit,
+                "url_pattern": "",
+                "found_date":  today,
+                "source":      "serper_daily",
+                "status":      "unread",
+            })
+
+        saved = 0
+        for i in range(0, len(payload), 50):
+            batch = payload[i:i+50]
+            seen  = {}
+            for row in batch:
+                seen[row["url"]] = row
+            client.table("crawler_results") \
+                .upsert(list(seen.values()), on_conflict="url") \
+                .execute()
+            saved += len(seen)
+
+        print(f"✅ Supabase: บันทึก {saved} records ลง crawler_results")
+        return saved
+
+    except Exception as e:
+        print(f"❌ Supabase save error: {e}")
+        return 0
+
+
+def add_new_domains(results: list) -> int:
+    """เพิ่ม domain ใหม่จาก Serper เข้า crawler_domains_normal เฉพาะ .go.th .ac.th .or.th"""
+    if not results:
+        return 0
+    try:
+        from supabase import create_client
+        client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+        payload = []
+        seen_domains = set()
+        for r in results:
+            url    = r.get("link", "")
+            parsed = urllib.parse.urlparse(url)
+            domain = parsed.netloc
+
+            if not domain or domain in seen_domains:
+                continue
+            if not any(domain.endswith(s) for s in ALLOWED_SUFFIXES):
+                continue
+
+            seen_domains.add(domain)
+
+            # ตัด URL ให้เป็น parent directory
+            parts      = parsed.path.rstrip("/").rsplit("/", 1)
+            parent_path = (parts[0] + "/") if len(parts) > 1 else "/"
+            index_url  = f"{parsed.scheme}://{parsed.netloc}{parent_path}"
+
+            payload.append({
+                "domain":    domain,
+                "index_url": index_url,
+            })
+
+        if not payload:
+            print("ℹ️ ไม่มี domain ใหม่จาก Serper")
+            return 0
+
+        client.table("crawler_domains_normal") \
+            .upsert(payload, on_conflict="domain") \
+            .execute()
+
+        print(f"✅ Domain pool: เพิ่ม/อัปเดต {len(payload)} domains")
+        return len(payload)
+
+    except Exception as e:
+        print(f"❌ Domain upsert error: {e}")
+        return 0
+
 def main():
     ict_now = get_ict_now()
     date_str = ict_now.strftime('%d_%m_%Y')
@@ -362,5 +465,13 @@ def main():
     generate_html_report(sorted_list, date_str)
     generate_index_html()
     print(f"✅ Finished. Report generated for {date_str}.")
+
+    # ✅ บันทึกลง Supabase crawler_results
+    print("\n📦 กำลังบันทึกลง Supabase...")
+    save_to_supabase(sorted_list)
+
+    # ✅ เพิ่ม domain ใหม่เข้า crawler pool
+    print("\n🌐 กำลังเพิ่ม domain ใหม่เข้า pool...")
+    add_new_domains(sorted_list)
 
 if __name__ == "__main__": main()
