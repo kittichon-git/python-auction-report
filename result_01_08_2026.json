@@ -1753,5 +1753,737 @@
     "position": 10,
     "_found_in": "1m",
     "_found_at": "01:00"
+  },
+  "https://procurement.kku.ac.th/t/bidders?sort=name": {
+    "title": "ผู้ ชนะ/ผู้ ได้ รับ คัดเลือก",
+    "link": "https://procurement.kku.ac.th/t/bidders?sort=name",
+    "snippet": "แผนปฏิบัติการจัดซื้อจัดจ้าง ประกาศร่าง TOR ประกาศราคากลาง ประกาศจัดซื้อจัดจ้าง ผู้ชนะ/ผู้ได้รับคัดเลือก ประกาศยกเลิก สัญญา/ข้อตกลง ขายทอดตลาดพัสดุ ประกาศผู้ ...",
+    "date": "2 ชั่วโมงที่ผ่านมา",
+    "position": 3,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.doa.go.th/th/news_announcement/114321/": {
+    "title": "ขายทอดตลาดพัสดุที่ชำรุด จำนวน 10 รายการ ศูนย์วิจัยและพัฒนา ...",
+    "link": "https://www.doa.go.th/th/news_announcement/114321/",
+    "snippet": "ขายทอดตลาดพัสดุที่ชำรุด จำนวน 10 รายการ ศูนย์วิจัยและพัฒนาการเกษตรลำปาง กรมวิชาการเกษตร. ข่าวประกาศ · กรมวิชาการเกษตร · 15 กรกฎาคม 2569; จำนวนผู้เข้าชม : 66 ...",
+    "date": "11 ชั่วโมงที่ผ่านมา",
+    "position": 6,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/ChulabhornRoyalAcademy/photos/-%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%88%E0%B8%B8%E0%B8%AC%E0%B8%B2%E0%B8%A0%E0%B8%A3%E0%B8%93%E0%B9%8C-%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%96%E0%B8%AD%E0%B8%99-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%97%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%84%E0%B8%9B%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%8D%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AA%E0%B8%99%E0%B9%83/1458764252947647/": {
+    "title": "ราชวิทยาลัยจุฬาภรณ์ เปิดขายทอดตลาดวัสดุจากการรื้อถอน และ ...",
+    "link": "https://www.facebook.com/ChulabhornRoyalAcademy/photos/-%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%88%E0%B8%B8%E0%B8%AC%E0%B8%B2%E0%B8%A0%E0%B8%A3%E0%B8%93%E0%B9%8C-%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%96%E0%B8%AD%E0%B8%99-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%97%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%84%E0%B8%9B%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%8D%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AA%E0%B8%99%E0%B9%83/1458764252947647/",
+    "snippet": "ราชวิทยาลัยจุฬาภรณ์ เปิดขายทอดตลาดวัสดุจากการรื้อถอน และวัสดุทั่วไป ขอเชิญผู้สนใจเข้าร่วมการประมูลขายทอดตลาดวัสดุจากกา รรื้อถอน ...",
+    "position": 10,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://lshosp.thaiddns.com/LaemSingHospital/": {
+    "title": "โรงพยาบาลแหลมสิงห์ จังหวัดจันทบุรี",
+    "link": "https://lshosp.thaiddns.com/LaemSingHospital/",
+    "snippet": "ปีงบ 2568 – ขายทอดตลาดครุภัณฑ์ชำรุดหรือเสื่อมสภาพ ประจำปีงบประมาณ 2568, 27 มีนาคม 2569, 1,029. 2, ปีงบ 2569 – (ร่าง) ประกวดราคาเช่าเครื่องวิเคราะห์อัตโนมัติ ...",
+    "date": "18 ชั่วโมงที่ผ่านมา",
+    "position": 8,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.medsci.up.ac.th/v4/index.php?view=category&id=2": {
+    "title": "Uncategorised",
+    "link": "https://www.medsci.up.ac.th/v4/index.php?view=category&id=2",
+    "snippet": "ประกาศจัดซื้อจัดจ้าง. (18 มีนาคม 2569) ประกาศประมูลขายทอดตลาดพัสดุชำรุด เสื่อมสภาพ ประจำปีงบประมาณ 2568 จำวน 59 รายการ | เอกสารแนบ. ประกาศรับสมัครบุคคล ...",
+    "date": "3 ชั่วโมงที่ผ่านมา",
+    "position": 10,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.rd.go.th/region/07/phichit/280.html": {
+    "title": "หน้าหลัก | สำนักงานสรรพากรพื้นที่พิจิตร",
+    "link": "https://www.rd.go.th/region/07/phichit/280.html",
+    "snippet": "ประกาศขายทอดตลาดพัสดุครุภัณฑ์ ที่ชำรุด เสื่อมสภาพ ไม่จำเป็นต้องใช้ในราชการของสำนักงานสรรพากรพื้นที่พิจิตร และสำนักงานสรรพากรพื้นที่สาขาในสังกัดประจำ ...",
+    "date": "2 วันที่ผ่านมา",
+    "position": 9,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://srirattana.go.th/index.php?op=dynamiccontent_detail&dynamiccontent_id=122100&id=": {
+    "title": "เทศบาลตำบลศรีรัตนะ -ตำบลศรีรัตนะ อำเภอศรีรัตนะ จังหวัด ...",
+    "link": "https://srirattana.go.th/index.php?op=dynamiccontent_detail&dynamiccontent_id=122100&id=",
+    "snippet": "ประกาศเทศบาลตำบลศรีรัตนะ เรื่องผลการจำหน่ายครุภัณฑ์ โดยวิธิขายทอดตลาด. เอกสารประกาศผลการดำเนินการจำหน่ายครุภัณฑ์ที่ชำรุด เสื่อมสภาพ ไม่จำเป็นต้องใช้ในราชการ.",
+    "date": "18 ชั่วโมงที่ผ่านมา",
+    "position": 4,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.audit.go.th/sites/default/files/files/purchase/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94.pdf": {
+    "title": "เรื่อง การขายพัสดุชำรุด เสื่อมสภาพ ไม่จำเป็นต้องใช้ในราชการ ...",
+    "link": "https://www.audit.go.th/sites/default/files/files/purchase/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94.pdf",
+    "snippet": "รายการ โดยวิธีเฉพาะเจาะจง โดยการเจรจาตกลงราคากัน ตามระเบียบกระทรวงการคลังว่าด้วยการจัดซื้อ ... ๕. หลักเกณฑ์การพิจารณา. คณะกรรมการจำหน่ายพัสดุจะพิจารณาผู้ที่ ...",
+    "date": "4 มี.ค. 2020",
+    "position": 1,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.opsmoac.go.th/phuket-news-files-451591791832": {
+    "title": "เรื่อง การขายพัสดุชำรุดและเสื่อมสภาพ โดยวิธีเฉพาะเจาะจง",
+    "link": "https://www.opsmoac.go.th/phuket-news-files-451591791832",
+    "snippet": "๓.๔ การตัดสินชี้ขาดในเรื่องตัวบุคคลผู้เสนอราคาได้และราคาในการจำหน่ายพัสดุ. โดยวิธีเฉพาะเจาะจงโดยการตกลงราคา ใช้วิธีประกาศผู้ชนะการเสนอราคา. ๓.๕ ผู้ชนะการเสนอ ...",
+    "position": 2,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://cccm4.coj.go.th/th/content/category/detail/id/4/cid/39/iid/397640/": {
+    "title": "ประกาศศาล เรื่อง การจำหน่ายพัสดุโดยวิธีเฉพาะเจาะจง และพัสดุที่ ...",
+    "link": "https://cccm4.coj.go.th/th/content/category/detail/id/4/cid/39/iid/397640/",
+    "snippet": "เอกสารแนบ. ประกาศศาล เรื่อง การจำหน่ายพัสดุโดยวิธีเฉพาะเจาะจง และพัสดุที่ไม่มีเลขครุภัณฑ์.pdf (มีผู้ Download เอกสารแล้ว 58 ...",
+    "date": "1 ก.พ. 2024",
+    "position": 4,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://web.technicchan.ac.th/ita68/OIT/o12/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8.pdf": {
+    "title": "คูมือการตรวจสอบพัสดุประจําป และ ...",
+    "link": "https://web.technicchan.ac.th/ita68/OIT/o12/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8.pdf",
+    "snippet": "ดังกล่าวโดยวิธีเฉพาะเจาะจงโดยการเจรจาตกลงราคากัน. 2. แลกเปลี่ยน ให้ดำเนินการ ... ผังกระบวนการปฏิบัติงานวิธีการจำหน่ายพัสดุโดยวิธีการเฉพาะเจาะจง. (ตาม ...",
+    "date": "14 ก.ค. 2025",
+    "position": 5,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "http://e-service.cpd.go.th/secret_mis/download/%E0%B8%84%E0%B8%B3%E0%B8%AA%E0%B8%B1%E0%B9%88%E0%B8%879_2564.%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3.pdf": {
+    "title": "เรื่อง แต่งตั้งคณะกรรมการจำหน่ายพัสดุโดยวิธีเฉพาะเจาะจง",
+    "link": "http://e-service.cpd.go.th/secret_mis/download/%E0%B8%84%E0%B8%B3%E0%B8%AA%E0%B8%B1%E0%B9%88%E0%B8%879_2564.%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3.pdf",
+    "snippet": "พัสดุภาครัฐ พ.ศ.๒๕๖๐ ข้อ ๒๑๕ จึงขอแต่งตั้งคณะกรรมการจำหน่ายพัสดุโดยวิธีเฉพาะเจาะจง ดังนี้. คณะกรรมการจำหน่ายพัสดุโดยวิธีเฉพาะเจาะจง จำนวน 5 รายการ. ๑. น.ส.มน ...",
+    "date": "4 ม.ค. 2026",
+    "position": 7,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://snc.lib.su.ac.th/snclibblog/?p=62976": {
+    "title": "การจำหน่ายพัสดุ – Sanamchandra Palace Library's Blog (1)",
+    "link": "https://snc.lib.su.ac.th/snclibblog/?p=62976",
+    "snippet": "การจำหน่ายพัสดุ เป็นหนึ่งในกระบวนการจัดหาครุภัณฑ์ของหน่วยงาน เริ่ม ... วิธีเฉพาะเจาะจง โดยการเจรจาตกลงราคากัน การขายโดยวิธีทอดตลาดให้ถือปฏิบัติตาม ...",
+    "date": "8 ก.พ. 2018",
+    "position": 9,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/SouthcenterSongkhla/posts/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B8%B5%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%88%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%84%E0%B8%A3%E0%B8%B8%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3/1533894621858122/": {
+    "title": "ประกาศกรมกิจการสตรีและสถาบันครอบครัว เรื่อง จำหน่ายพัสดุครุภัณฑ์ ...",
+    "link": "https://www.facebook.com/SouthcenterSongkhla/posts/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B8%B5%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%88%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%84%E0%B8%A3%E0%B8%B8%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3/1533894621858122/",
+    "snippet": "ประกาศกรมกิจการสตรีและสถาบันครอบครัว เรื่อง จำหน่ายพัสดุครุภัณฑ์ชำรุด ประจำปีงบประมาณ พ.ศ. 2569 โดยวิธีเฉพาะเจาะจง โดยการเจรจาตกลงราคา รายละเอียดครุภัณฑ์ ...",
+    "date": "19 พ.ค. 2026",
+    "position": 10,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.suphan.go.th/content-7-page-33687.html": {
+    "title": "องค์การบริหารส่วนจังหวัดสุพรรณบุรี",
+    "link": "https://www.suphan.go.th/content-7-page-33687.html",
+    "snippet": "ประกาศขายทอดตลาดทรัพย์สินประจำปี · ประกาศกำหนดอายุการใช้งานของสินทรัพย์ขององค์การบริหารส่วนจังหวัดสุพรรณบุรี · คู่มือการปฏิบัติงานฝ่ายทะเบียนพัสดุและทรัพย์สิน ...",
+    "date": "3 ชั่วโมงที่ผ่านมา",
+    "position": 1,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://nikom.go.th/portal/index.php?module=personnel": {
+    "title": "ทำเนียบบุคลากร องค์การบริหารส่วนตำบลนิคม",
+    "link": "https://nikom.go.th/portal/index.php?module=personnel",
+    "snippet": "องค์การบริหารส่วนตำบลนิคม · E-Service · กระดาน ถาม ... รายงานผลการขายทอดตลาด. รายงานผลการปฏิบัติงาน. รายงานผลการปฏิบัติงานประจำปี ...",
+    "date": "6 ชั่วโมงที่ผ่านมา",
+    "position": 2,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/ronthong.go.th/photos/1037067598716903/": {
+    "title": "องค์การบริหารส่วนตำบลร่อนทอง",
+    "link": "https://www.facebook.com/ronthong.go.th/photos/1037067598716903/",
+    "snippet": "#ประชาสัมพันธ์ การยางแห่งประเทศไทย ศูนย์วิจัยยางบุรีรัมย์ แจ้งเรื่อง ขอความอนุเคราะห์ประชาสัมพันธ์ประกาศขายทอดตลาดไม้ ยางพาราในแปลงที่สิ้นสุดโครงการ ...",
+    "position": 3,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://thaihad.go.th/index.php": {
+    "title": "องค์การบริหารส่วนตำบลท้ายหาด อำเภอเมือง จังหวัดสมุทรสงคราม ...",
+    "link": "https://thaihad.go.th/index.php",
+    "snippet": "องค์การบริหารส่วนตำบลท้ายหาด อำเภอเมือง จังหวัดสมุทรสงคราม : www ... ประชาสัมพันธ์ประกาศขายทอดตลาดครุภัณฑ์ที่มีสภาพชำรุด เสื่อมสภาพ และไม่มีความ ...",
+    "date": "4 วันที่ผ่านมา",
+    "position": 9,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.nancity.go.th/news/detail/5313/data.html": {
+    "title": "เทศบาลเมืองน่าน เร่งแก้ไขฝาท่อระบายน้ำ เพิ่มความปลอดภัยให้ ...",
+    "link": "https://www.nancity.go.th/news/detail/5313/data.html",
+    "snippet": "วันที่ 31 กรกฎาคม 2569 นายสุรพล เธียรสูตร นายกเทศมนตรีเมืองน่าน มอบหมายให้ นายปกฤษณ์ คำเหลือง ปลัดเทศบาล ... ประกาศขายทอดตลาด. การประเมินความเสี่ยงเพื่อการป้องกัน ...",
+    "date": "9 ชั่วโมงที่ผ่านมา",
+    "position": 5,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.nancity.go.th/news/detail/5312/data.html": {
+    "title": "ประชา​สัมพันธ์​ เรื่อง เรียกประชุมสภาเทศบาล​สมัยสามัญ​ ...",
+    "link": "https://www.nancity.go.th/news/detail/5312/data.html",
+    "snippet": "... เรื่อง เรียกประชุมสภาเทศบาล​สมัยสามัญ​สมัยที่ 3 ประจำปี พ.ศ. 2569. ... ประกาศขายทอดตลาด. การประเมินความเสี่ยงเพื่อการป้องกันการทุจริต. การประเมินความ ...",
+    "date": "9 ชั่วโมงที่ผ่านมา",
+    "position": 10,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://kkpao.go.th/kkpao/news/2985": {
+    "title": "ประกาศองค์การบริหารส่วนจังหวัดขอนแก่น เรื่อง ขายทอดตลาด ...",
+    "link": "https://kkpao.go.th/kkpao/news/2985",
+    "snippet": "อบจ.ขอนแก่น · หน้าแรก รู้จัก อบจ. โครงสร้าง อบจ. อำนาจหน้าที่ แผนพัฒนา e ... ประกาศองค์การบริหารส่วนจังหวัดขอนแก่น เรื่อง ขายทอดตลาดทรัพย์สินที่ชำรุดและเสื่อมสภาพ ประจำปี 2559 ...",
+    "date": "9 ก.ค. 2026",
+    "position": 1,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://prachinpao.go.th/sites/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B9%88-76/": {
+    "title": "ประกาศองค์การบริหารส่วนจังหวัดปราจีนบุรี เรื่อง ขายทอดตลาด ...",
+    "link": "https://prachinpao.go.th/sites/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B9%88-76/",
+    "snippet": "ประกาศองค์การบริหารส่วนจังหวัดปราจีนบุรี เรื่อง ขายทอดตลาดทรัพย์สิน ลงวันที่ 2 กันยายน 2564 – อบจ.ปราจีนบุรี. Home · ข้อมูลหน่วยงาน · โครงสร้างการแบ่งส่วนงานของ ...",
+    "date": "2 ก.ย. 2021",
+    "position": 2,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://chiangmaipao.go.th/cmpao/article-detail/5475/": {
+    "title": "ประกาศ อบจ.เชียงใหม่ เรื่อง ขายทอดตลาดรถยนต์ส่วนกลางของ ...",
+    "link": "https://chiangmaipao.go.th/cmpao/article-detail/5475/",
+    "snippet": "ประกาศ อบจ.เชียงใหม่ เรื่อง ขายทอดตลาดรถยนต์ส่วนกลางขององค์การบริหารส่วนจังหวัดเชียงใหม่. เอกสารที่เกี่ยวข้อง. 88641679459932.pdf ไฟล์ PDF. ส่งอีเมล์สอบถาม ...",
+    "date": "24 ก.พ. 2023",
+    "position": 3,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/takpao999/posts/%E0%B8%AD%E0%B8%9A%E0%B8%88%E0%B8%95%E0%B8%B2%E0%B8%81-%E0%B8%94%E0%B8%B3%E0%B9%80%E0%B8%99%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%8B%E0%B8%B2%E0%B8%81-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%84%E0%B8%94%E0%B9%89%EF%B8%8F%EF%B8%8F%E0%B8%A7/1171402475031948/": {
+    "title": "📣อบจ.ตาก ดำเนินการประมูลขายทอดตลาดพัสดุชำรุดเสื่อมสภาพ( ...",
+    "link": "https://www.facebook.com/takpao999/posts/%E0%B8%AD%E0%B8%9A%E0%B8%88%E0%B8%95%E0%B8%B2%E0%B8%81-%E0%B8%94%E0%B8%B3%E0%B9%80%E0%B8%99%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%8B%E0%B8%B2%E0%B8%81-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%84%E0%B8%94%E0%B9%89%EF%B8%8F%EF%B8%8F%E0%B8%A7/1171402475031948/",
+    "snippet": "อบจ.ตาก ดำเนินการประมูลขายทอดตลาดพัสดุชำรุดเสื่อมสภาพ(ซาก) และไม่สามารถใช้งานได้ ‍♀️ ‍♂️ วันที่ 16 กรกฎาคม พ.ศ.2568 องค์การบริหารส่วนจังหวัดตาก ...",
+    "position": 4,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://m.mukdahan.go.th/?p=29967": {
+    "title": "ประกาศ อบจ.มุกดาหาร เรื่อง ขายทอดตลาดรถยนต์ที่ชำรุด เสื่อมสภาพ ...",
+    "link": "https://m.mukdahan.go.th/?p=29967",
+    "snippet": "ประกาศ อบจ.มุกดาหาร เรื่อง ขายทอดตลาดรถยนต์ที่ชำรุด เสื่อมสภาพ เเละไม่จำเป็นต้องใช้งานในราชการ · admin2 mukdahan. View in Full Screen. Page 1 / 5. Zoom 100%.",
+    "date": "17 ก.พ. 2022",
+    "position": 5,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://home.mhs-pao.go.th/auction/": {
+    "title": "ระบบขายทอดตลาด - หน้าหลัก",
+    "link": "https://home.mhs-pao.go.th/auction/",
+    "snippet": "เว็บไซต์ อบจ.แม่ฮ่องสอน. รายการขายทอดตลาด. ทรัพย์สินที่ชำรุดและเสื่อมสภาพ. 18:57:09. ติดต่อ กองคลัง องค์การบริหารส่วนจังหวัดแม่ฮ่องสอน โทรศัพท์ : 053-613688 ทีม ...",
+    "date": "9 ก.พ. 2024",
+    "position": 6,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.mtrs.ac.th/document/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%9D%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8/doc01351920260209135602_aaaaaaa.pdf": {
+    "title": "ประกาศ องค์การบริหารส่วนจังหวัดระยอง - เรื่อง ขายทอดตลาด ...",
+    "link": "https://www.mtrs.ac.th/document/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%9D%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8/doc01351920260209135602_aaaaaaa.pdf",
+    "snippet": "๒.๑ การขายทอดตลาดครั้งนี้ คณะกรรมการขายทอดตลาดจะพิจารณาครุภัณฑ์ ที่ ... อบจ.ระยอง ระดับมัธยมฯ)ราคารวม. ๔๙๔,๘๕๐,๐๐๐บ. (เรือนจำกลางระยอง). ขนาด ๑๔,๐๐๐ ...",
+    "date": "26 ก.พ. 2026",
+    "position": 7,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "http://www.buengkandla.go.th/view_detail.php?boxID=940&id=358720": {
+    "title": "อบจ.บึงกาฬ ประกาศขายทอดตลาดพัสดุชำรุด เสื่อมสภาพ จำนวน ...",
+    "link": "http://www.buengkandla.go.th/view_detail.php?boxID=940&id=358720",
+    "snippet": "อบจ.บึงกาฬ ประกาศขายทอดตลาดพัสดุชำรุด เสื่อมสภาพ จำนวน 169 รายการ. ดาวน์โหลด 1. โพสเมื่อ : 04 มี.ค. 2569.",
+    "date": "4 มี.ค. 2026",
+    "position": 8,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "http://1.179.155.19/kkpao/index.php?r=content/shows&id=2&Content_sort=title.desc-content_date-category&Content_page=9": {
+    "title": "องค์การบริหารส่วนจังหวัดขอนแก่น",
+    "link": "http://1.179.155.19/kkpao/index.php?r=content/shows&id=2&Content_sort=title.desc-content_date-category&Content_page=9",
+    "snippet": "ขายทอดตลาดทรัพย์สินที่ชำรุดและเสื่อมสภาพ, 153. 15/08/2025 18:11, ขายทอดตลาด ... อบจ.ขอนแก่น(กรณีการบรรจุและแต่งตั้งบุคคลผู้สำเร็จการศึกษาฯ), 1,155. 24/02 ...",
+    "date": "18 ก.ย. 2020",
+    "position": 9,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/rayongpao/posts/%E0%B8%AD%E0%B8%9A%E0%B8%88%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87-%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-853-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B9%83%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B5/1252216266948588/": {
+    "title": "อบจ.ระยอง เปิดการประมูลขายทอดตลาดพัสดุชำรุดและเสื่อมสภาพ ...",
+    "link": "https://www.facebook.com/rayongpao/posts/%E0%B8%AD%E0%B8%9A%E0%B8%88%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87-%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E-%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-853-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B9%83%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B5/1252216266948588/",
+    "snippet": "อบจ.ระยอง เปิดการประมูลขายทอดตลาดพัสดุชำรุดและเสื่อมสภาพ จำนวน 853 รายการ ในวันที่ 20 สิงหาคม 2568 เวลา 10.30 น. เป็นต้นไป ณ ห้องประชุม 1 ชั้น 3...",
+    "position": 10,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.dla.go.th/land/tempHome.do?departmentLv1Id=2gvbbgu4fqwd0gsy3aebvhulohbafxcw7t3wqpe": {
+    "title": "สำนักงานท้องถิ่น จังหวัดยโสธร :: DLA WEB 68 [DLA-WEB68- ...",
+    "link": "https://www.dla.go.th/land/tempHome.do?departmentLv1Id=2gvbbgu4fqwd0gsy3aebvhulohbafxcw7t3wqpe",
+    "snippet": "ประชาสัมพันธ์ขายทอดตลาด อบต.กระจาย. ยังไม่มีหนังสือราชการ. Logo Lower. กรมส่งเสริมการปกครองท้องถิ่น ถนนนครราชสีมา แขวงดุสิต เขตดุสิต กรุงเทพ 10300 โทรศัพท์ : 0 ...",
+    "date": "12 ชั่วโมงที่ผ่านมา",
+    "position": 1,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/abt.bangsaipa/photos/1458661192965692/": {
+    "title": "อบต.บางไทรป่า อำเภอบางเลน จังหวัดนครปฐม",
+    "link": "https://www.facebook.com/abt.bangsaipa/photos/1458661192965692/",
+    "snippet": "... อบต.บางไทรป่า คณะผู้บริหาร สมาชิกสภาอบต. บางไทรป่า ข้าราชการ พนักงาน ... วันที่ 21 กรกฎาคม 2569 องค์การบริหารส่วนตำบลบางไทรป่า ได้ดำเนินการขายทอดตลาด ...",
+    "position": 4,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/ronthong.go.th/photos/1037067725383557/": {
+    "title": "องค์การบริหารส่วนตำบลร่อนทอง",
+    "link": "https://www.facebook.com/ronthong.go.th/photos/1037067725383557/",
+    "snippet": "#ประชาสัมพันธ์ การยางแห่งประเทศไทย ศูนย์วิจัยยางบุรีรัมย์ แจ้งเรื่อง ขอความอนุเคราะห์ประชาสัมพันธ์ประกาศขายทอดตลาด ... อบต.ร่อนทอง อ.สตึก จ.บุรีรัมย์ and 7 ...",
+    "position": 7,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.dla.go.th/land/tempHome.do?departmentLv1Id=g8z88s7tqzlkmmgy404r7ab7nlstdq3q1l37vcxe": {
+    "title": "สำนักงานท้องถิ่น จังหวัดยโสธร :: DLA WEB 68 [DLA-WEB68- ...",
+    "link": "https://www.dla.go.th/land/tempHome.do?departmentLv1Id=g8z88s7tqzlkmmgy404r7ab7nlstdq3q1l37vcxe",
+    "snippet": "ประชาสัมพันธ์ขายทอดตลาด อบต.กระจาย. ยังไม่มีหนังสือราชการ. Logo Lower. กรมส่งเสริมการปกครองท้องถิ่น ถนนนครราชสีมา แขวงดุสิต เขตดุสิต กรุงเทพ 10300 โทรศัพท์ : 0 ...",
+    "date": "1 วันที่ผ่านมา",
+    "position": 7,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.nancity.go.th/news/detail/5315/data.html": {
+    "title": "“ฉันทามติของชาวน่าน",
+    "link": "https://www.nancity.go.th/news/detail/5315/data.html",
+    "snippet": "สรุปผลการจัดซื้อจัดจ้างหรือการจัดหาพัสดุรายเดือน(สขร.1) · รายงานผลการจัดซื้อจัดจ้างหรือการจัดหาพัสดุประจำปี · ประกาศขายทอดตลาด ... 214/10 ถนนมหายศ ตำบลในเวียง ...",
+    "date": "9 ชั่วโมงที่ผ่านมา",
+    "position": 7,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://lpg1.go.th/Web2026/public/index.php/news?page=38&cat=district-pr": {
+    "title": "ข่าวประชาสัมพันธ์ฯ - สพป.ลำปาง เขต ...",
+    "link": "https://lpg1.go.th/Web2026/public/index.php/news?page=38&cat=district-pr",
+    "snippet": "ประกาศจัดซื้อจัดจ้าง สรุปผลการจัดซื้อจัดจ้าง/การจัดหาพัสดุรายเดือน ประจำปีงบประมาณ พ.ศ.2569 ... ประกาศเรื่องขายทอดตลาดสิ่งปลูกสร้างของโรงเรียนชุมชนบ้านฟ่อนวิทยา ...",
+    "date": "19 ชั่วโมงที่ผ่านมา",
+    "position": 9,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://chiangmai.web.cpd.go.th/news-all/procurement-news/592-prakad67-20.html": {
+    "title": "ประกาศจังหวัดเชียงใหม่ เรื่อง ขายทอดตลาดครุภัณฑ์ยานพาหนะและ ...",
+    "link": "https://chiangmai.web.cpd.go.th/news-all/procurement-news/592-prakad67-20.html",
+    "snippet": "ประกาศจังหวัดเชียงใหม่ เรื่อง ขายทอดตลาดครุภัณฑ์ยานพาหนะและขนส่ง ชำรุด เสื่อมสภาพหรือไม่จำเป็นต้องใช้ในราชการ จำนวน 5 คัน (ครั้งที่ 2) ...",
+    "date": "1 มี.ค. 2025",
+    "position": 1,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.lamphunpao.go.th/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AF-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8/": {
+    "title": "ประกาศฯ ขายทอดตลาดพัสดุครุภัณฑ์ชำรุดเสื่อมสภาพดำเนินการ ...",
+    "link": "https://www.lamphunpao.go.th/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AF-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8/",
+    "snippet": "ประกาศฯ ขายทอดตลาดพัสดุครุภัณฑ์ชำรุดเสื่อมสภาพ ดำเนินการขายทอดตลาดในวันที่ ๒๔ ส.ค. ๒๕๖๕. ดาวน์โหลด. Post Views: 66. Need Help? Chat with us. อบจ.ลำพูน.",
+    "date": "24 ส.ค. 2022",
+    "position": 2,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/100066810212541/posts/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%84%E0%B8%A3%E0%B8%B8%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E-%E0%B8%AA%E0%B8%B3/1096361185934212/": {
+    "title": "📣📣📣📣ประกาศจังหวัดเชียงราย เรื่อง การขายทอดตลาดพัสดุ ...",
+    "link": "https://www.facebook.com/100066810212541/posts/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%84%E0%B8%A3%E0%B8%B8%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E-%E0%B8%AA%E0%B8%B3/1096361185934212/",
+    "snippet": "ประกาศจังหวัดเชียงราย เรื่อง การขายทอดตลาดพัสดุครุภัณฑ์ ที่ชำรุด และเสื่อมสภาพ สำนักงานเกษตรจังหวัดเชียงราย มีความประสงค์ในการขายทอดตลาดพัสดุครุภัณฑ์ ...",
+    "position": 3,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://chiangmai.moc.go.th/th/content/category/detail/id/161/iid/162508": {
+    "title": "ประกาศจังหวัดเชียงใหม่เรื่อง ขายทอดตลาดพัสดุที่ชำรุด เสื่อมสภาพ ...",
+    "link": "https://chiangmai.moc.go.th/th/content/category/detail/id/161/iid/162508",
+    "snippet": "ประกาศจังหวัดเชียงใหม่เรื่อง ขายทอดตลาดพัสดุที่ชำรุด เสื่อมสภาพ หรือไม่จำเป็นต้องใช้ในราชการต่อไป (ครุภัณฑ์ยานพาหนะและขนส่ง) ประจำปีงบประมาณ พ.ศ. 2568 ...",
+    "date": "6 พ.ค. 2026",
+    "position": 4,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.masscomm.cmu.ac.th/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%A1%E0%B8%A7-18/": {
+    "title": "ประกาศขายทอดตลาดครุภัณฑ์-V1Download",
+    "link": "https://www.masscomm.cmu.ac.th/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%A1%E0%B8%A7-18/",
+    "snippet": "ประกาศคณะการสื่อสารมวลชน มหาวิทยาลัยเชียงใหม่เรื่อง การขายทอดตลาดครุภัณฑ์ชำรุด และหมดความจำเป็นใช้งาน จำนวน 535 รายการ ...",
+    "date": "7 พ.ค. 2023",
+    "position": 5,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://lampang.doae.go.th/wp-content/uploads/2026/06/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94-2.pdf": {
+    "title": "ประกาศขายทอดตลาด",
+    "link": "https://lampang.doae.go.th/wp-content/uploads/2026/06/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94-2.pdf",
+    "snippet": "คณะกรรมการขายทอดตลาด การจำหน่ายพัสดุครุภัณฑ์ เป็นการขายทอดตลาด ครุภัณฑ์ชำรุด จำนวน ๒๒ รายการ. รถยนต์ราชการ จำนวน ๔ คัน. ๓.๓ สงวนสิทธิ์ไม่โอนทะเบียนรถให้กับผู้ ...",
+    "date": "9 มิ.ย. 2026",
+    "position": 6,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.finearts.go.th/chiangmaiarchives/view/61601-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AB%E0%B8%AD%E0%B8%88%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%89%E0%B8%A5%E0%B8%B4%E0%B8%A1%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%AF-%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%84%E0%B8%A3%E0%B8%B8%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%8A%E0%B9%8D%E0%B8%B2%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B9%8D%E0%B8%B2%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%83%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3": {
+    "title": "ประกาศหอจดหมายเหตุแห่งชาติเฉลิมพระเกียรติฯ เชียงใหม่ เรื่อง ...",
+    "link": "https://www.finearts.go.th/chiangmaiarchives/view/61601-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AB%E0%B8%AD%E0%B8%88%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%89%E0%B8%A5%E0%B8%B4%E0%B8%A1%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%AF-%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%84%E0%B8%A3%E0%B8%B8%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%8A%E0%B9%8D%E0%B8%B2%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B9%8D%E0%B8%B2%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%83%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3",
+    "snippet": "ประกาศหอจดหมายเหตุแห่งชาติเฉลิมพระเกียรติฯ เชียงใหม่ เรื่อง ขายทอดตลาดครุภัณฑ์ชํารุด เสื่อมสภาพและไม่จําเป็นต้องใช้ในราชการ.",
+    "date": "17 ธ.ค. 2025",
+    "position": 7,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://aotdatainfo.airportthai.co.th/bidding/Category/index/146": {
+    "title": "ประกาศจำหน่ายพัสดุ - บริษัทท่าอากาศยานไทย จำกัด (มหาชน)",
+    "link": "https://aotdatainfo.airportthai.co.th/bidding/Category/index/146",
+    "snippet": "วันที่ขายทอดตลาด : 1 ก.ย. 2568 เวลาขายทอดตลาด : 10:45 น. ประกาศ. ขายทอดตลาดครุภัณฑ์ชำรุดจำนวน 209 รายการ ณ ท่าอากาศยานแม่ฟ้าหลวง เชียงราย. ผู้บันทึก : ระบบจัด ...",
+    "position": 8,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://eprocurement.pwa.co.th/public-auction/page/3": {
+    "title": "วิธีทอดตลาด (1000 รายการ) - การประปาส่วนภูมิภาค",
+    "link": "https://eprocurement.pwa.co.th/public-auction/page/3",
+    "snippet": "ขายทอดตลาดพัสดุที่ชำรุด/เสื่อมสภาพและไม่จำเป็นต้องใช้งาน จำนวน 60 รายการ กปภ ... กปภ. สาขาพะเยา, 1/2569 · ขายทอดตลาดสินทรัพย์ถาวร จำนวน 18 รายการ และวัสดุ ...",
+    "date": "30 เม.ย. 2010",
+    "position": 10,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www4.fisheries.go.th/local/index.php/main/site/Sirindhornfisheries": {
+    "title": "หน่วยป้องกันและปราบปรามประมงน้ำจืดเขื่อนสิรินธร (อุบลราชธานี)",
+    "link": "https://www4.fisheries.go.th/local/index.php/main/site/Sirindhornfisheries",
+    "snippet": "ปฏิทิน. Expired. ประกาศขายทอดตลาดพัสดุครุภัณฑ์. ข่าวสารประชาสัมพันธ์ (NO.15856) 2024-01-31 ประกาศขายทอดตลาดพัสดุครุภัณฑ์ อ่าน 136 136. Expired.",
+    "date": "7 วันที่ผ่านมา",
+    "position": 10,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://ww1.suphanburi.go.th/news/detail/2627": {
+    "title": "ประกาศขายอดตลาดซากครุภัณฑ์ จำนวน 1 รายการ ตามเลขที่ ถ ...",
+    "link": "https://ww1.suphanburi.go.th/news/detail/2627",
+    "snippet": "ประกาศขายทอดตลาดครุภัณฑ์ยานพาหนะและขนส่ง/สำนักงานสรรพากรพื้นที่ปทุมธานี 2 · ดูทั้งหมด. สำนักงานจังหวัดสุพรรณบุรี ศาลากลางจังหวัดสุพรรณบุรี (ชั้น 4) ถนน ...",
+    "date": "5 วันที่ผ่านมา",
+    "position": 8,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://lshosp.moph.go.th/laemsinghospital/": {
+    "title": "โรงพยาบาลแหลมสิงห์ จังหวัดจันทบุรี - กระทรวงสาธารณสุข",
+    "link": "https://lshosp.moph.go.th/laemsinghospital/",
+    "snippet": "ปีงบ 2568 – ขายทอดตลาดครุภัณฑ์ชำรุดหรือเสื่อมสภาพ ประจำปีงบประมาณ 2568, 27 มีนาคม 2569, 1,028. 2, ปีงบ 2569 – (ร่าง) ประกวดราคาเช่าเครื่องวิเคราะห์อัตโนมัติ ...",
+    "date": "22 ชั่วโมงที่ผ่านมา",
+    "position": 2,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.navy.mi.th/procurement-plan": {
+    "title": "แผนการจัดซื้อจัดจ้าง",
+    "link": "https://www.navy.mi.th/procurement-plan",
+    "snippet": "กองบัญชาการป้องกันชายแดนจันทบุรีและตราด, หมวดเรือลาดตระเวนชายแดน (มชด ... ขายทอดตลาด. ค้นหา. แผนการจัดซื้อ/จัดจ้าง. ราคากลาง/ประกาศร่าง TOR. ประกาศจัดซื้อ ...",
+    "date": "9 ชั่วโมงที่ผ่านมา",
+    "position": 6,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/aobrombuu/posts/%EF%B8%8F%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%A5%E0%B8%B6%E0%B8%81%E0%B9%80%E0%B8%9A%E0%B8%B4%E0%B8%81%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2-%E0%B8%81%E0%B8%A5%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B2%E0%B8%AD%E0%B8%B5%E0%B8%81%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%81%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87-%E0%B8%A1%E0%B8%B2%E0%B8%AD%E0%B8%B1%E0%B8%9E%E0%B9%80%E0%B8%94%E0%B8%97-%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%88%E0%B8%B2%E0%B8%A3%E0%B8%A2%E0%B9%8C%E0%B8%AD%E0%B8%B2%E0%B8%97%E0%B8%B4%E0%B8%95%E0%B8%A2%E0%B8%B2-%E0%B8%9E%E0%B8%A2%E0%B8%B2/122429132798001713/": {
+    "title": "️เจาะลึกเบิกจ่าย กลับมาอีกครั้งตามคำเรียกร้อง",
+    "link": "https://www.facebook.com/aobrombuu/posts/%EF%B8%8F%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%A5%E0%B8%B6%E0%B8%81%E0%B9%80%E0%B8%9A%E0%B8%B4%E0%B8%81%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2-%E0%B8%81%E0%B8%A5%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B2%E0%B8%AD%E0%B8%B5%E0%B8%81%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%81%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87-%E0%B8%A1%E0%B8%B2%E0%B8%AD%E0%B8%B1%E0%B8%9E%E0%B9%80%E0%B8%94%E0%B8%97-%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%88%E0%B8%B2%E0%B8%A3%E0%B8%A2%E0%B9%8C%E0%B8%AD%E0%B8%B2%E0%B8%97%E0%B8%B4%E0%B8%95%E0%B8%A2%E0%B8%B2-%E0%B8%9E%E0%B8%A2%E0%B8%B2/122429132798001713/",
+    "snippet": "เทคนิคการตรวจสอบพัสดุประจำปี การตรวจสอบค่าเสื่อมประจำปี เทคนิคการขายทอดตลาด พร้อมฝึกปฎิบัติวิธีการขายทอดตลาด ⭕️พบท่านอาจารย์ไพศาล ทิพย์มณี ชัดเจน ...",
+    "position": 9,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://egp.rid.go.th/announce/15": {
+    "title": "ประกาศราคากลาง",
+    "link": "https://egp.rid.go.th/announce/15",
+    "snippet": "ขายทอดตลาด. ประกาศราคากลาง. ปิดตัวกรอง. สำนัก/กอง. หน่วยงาน ... กองพัสดุ, คัดเลือก, 27/07/2569. 69079494091. ซื้อน้ำมันดีเซลสำหรับเครื่องยนต์หมุนเร็ว รวม 1 รายการ ...",
+    "date": "3 ชั่วโมงที่ผ่านมา",
+    "position": 4,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/ssrutraininglocal/photos/%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99-%E0%B8%8A%E0%B8%B0%E0%B8%AD%E0%B8%B3-%E0%B8%9E%E0%B8%B1%E0%B8%97%E0%B8%A2%E0%B8%B2-%E0%B8%A2%E0%B8%B7%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%9A%E0%B8%A3%E0%B8%A1-%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%96%E0%B8%B4%E0%B9%88%E0%B8%99%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B8%AD%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B8%A3%E0%B8%AD%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%B5%E0%B8%81%E0%B8%99%E0%B8%B4%E0%B8%94%E0%B8%99%E0%B8%B0%E0%B8%84%E0%B8%B0-%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94/1447838020772414/": {
+    "title": "ขอนแก่น #ชะอำ #พัทยา #ยืนยันการจัดอบรม #สภาท้องถิ่น #รุ่นอื่น ...",
+    "link": "https://www.facebook.com/ssrutraininglocal/photos/%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99-%E0%B8%8A%E0%B8%B0%E0%B8%AD%E0%B8%B3-%E0%B8%9E%E0%B8%B1%E0%B8%97%E0%B8%A2%E0%B8%B2-%E0%B8%A2%E0%B8%B7%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%9A%E0%B8%A3%E0%B8%A1-%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%96%E0%B8%B4%E0%B9%88%E0%B8%99%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B8%AD%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B8%A3%E0%B8%AD%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%B5%E0%B8%81%E0%B8%99%E0%B8%B4%E0%B8%94%E0%B8%99%E0%B8%B0%E0%B8%84%E0%B8%B0-%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94/1447838020772414/",
+    "snippet": "... พัสดุ การขายทอดตลาด การยกเว้นการปฏิบัติตามระเบียบฯ พัสดุภาครัฐ การจ้างเหมาบริการ การปรับลดราคาขององค์กรปกครองส่วนท้องถิ่น” ดาวน์โหลดเอกสาร https://drive ...",
+    "position": 8,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://race.nstru.ac.th/home_ex/blog/search/word?per_page=243": {
+    "title": "ผลการค้นหา: - Blog Space NSTRU",
+    "link": "https://race.nstru.ac.th/home_ex/blog/search/word?per_page=243",
+    "snippet": "ระเบียบพัสดุ / การจัดซื้อจัดจ้าง · การซ้อมความเข้าใจเกี่ยวกับการดำเนินการจำหน่ายพัสดุ โดยวิธีการขายทอดตลาด. การจำหน่ายพัสดุ โดยวิธีการขายทอดตลาด. สิริกร 2022-09 ...",
+    "date": "5 ชั่วโมงที่ผ่านมา",
+    "position": 6,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/aobrombuu/posts/%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3-%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B2%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%88%E0%B8%9A%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%9E%E0%B8%A2%E0%B9%8C-%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A/122429131544001713/": {
+    "title": "หลักสูตร ใครต้องมาบ้าง🖐🖐 ✅การเงิน👉รับจบทุกอย่าง ✅พัสดุ👉เครี ...",
+    "link": "https://www.facebook.com/aobrombuu/posts/%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3-%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B2%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%88%E0%B8%9A%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%9E%E0%B8%A2%E0%B9%8C-%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A/122429131544001713/",
+    "snippet": "เทคนิคการตรวจสอบพัสดุประจำปี การตรวจสอบค่าเสื่อมประจำปี เทคนิคการขายทอดตลาด พร้อมฝึกปฎิบัติวิธีการขายทอดตลาด ⭕️พบท่านอาจารย์ไพศาล ทิพย์มณี ชัดเจน ...",
+    "position": 9,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.facebook.com/story.php?story_fbid=1465648448932708&id=100064627004675&comment_id=1757787888584887": {
+    "title": "สู้ราคาประมูลสูงสุด รถจักรยานยนต์ 35 คัน 400000 บาท ...",
+    "link": "https://www.facebook.com/story.php?story_fbid=1465648448932708&id=100064627004675&comment_id=1757787888584887",
+    "snippet": "... พัทลุง ขอขอบคุณทุกท่านที่มาร่วมการขายทอดตลาดพัสดุครุภัณฑ์ยา นพาหนะรถจักรยานยนต์จํานวนสามสิบห้ารายการของ สภ เมืองพัทลุงในครั้งนี้ค่ะ ขอขอบพระคุณทุกท่านค่ะ ...",
+    "position": 10,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://region9.dld.go.th/index.php/th/home-office4": {
+    "title": "หน้าแรก สำนักงานปศุสัตว์จังหวัดสงขลา",
+    "link": "https://region9.dld.go.th/index.php/th/home-office4",
+    "snippet": "ยกเลิกประกาศขายทอดตลาด, 2569-03-24. ประกาศผู้ชนะการเสนอราคา ประกวดราคาซื้้อ ... สำนักงานปศุสัตว์จังหวัดสงขลา. ที่อยู่ : เลขที่ 170 หมู่ที่ 10 ถนนกาญจนวนิช ...",
+    "date": "9 ชั่วโมงที่ผ่านมา",
+    "position": 3,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "http://angthong.go.th/2564/news": {
+    "title": "ข่าวประชาสัมพันธ์ จังหวัดอ่างทอง (จ. ...",
+    "link": "http://angthong.go.th/2564/news",
+    "snippet": "โครงสร้างสำนักงานจังหวัด · กลุ่มงานศูนย์ดำรงธรรมจังหวัด · กลุ่มงานยุทธศาสตร์และ ... — ประกาศขายทอดตลาด, — ร่าง TOR, — ราคากลาง, — แผนการจัดซื้อจัดจ้างประจำปี ...",
+    "date": "17 ชั่วโมงที่ผ่านมา",
+    "position": 5,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://webportal.bangkok.go.th/sbmc/page/sub/22863/-/24?page=24": {
+    "title": "ข่าวประชาสัมพันธ์ - สำนักงานเลขานุการสภากรุงเทพมหานคร",
+    "link": "https://webportal.bangkok.go.th/sbmc/page/sub/22863/-/24?page=24",
+    "snippet": "ประกาศขายทอดตลาด. บริการ. ข้อมูลเปิดของหน่วยงาน ... Mr. Kawagoe ผู้แทนสำนักงานจังหวัดฟุกุโอกะ ประจำประเทศไทย เข้าพบผู้บริหารสำนักงานเลขานุการสภากรุงเทพมหานคร.",
+    "date": "18 ชั่วโมงที่ผ่านมา",
+    "position": 9,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://udn1.go.th/%E0%B8%81%E0%B8%A5%E0%B8%B8%E0%B9%88%E0%B8%A1%E0%B8%99%E0%B9%82%E0%B8%A2%E0%B8%9A%E0%B8%B2%E0%B8%A2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%81%E0%B8%9C%E0%B8%99": {
+    "title": "กลุ่มนโยบายและแผน - สพป.อุดรธานี เขต ...",
+    "link": "https://udn1.go.th/%E0%B8%81%E0%B8%A5%E0%B8%B8%E0%B9%88%E0%B8%A1%E0%B8%99%E0%B9%82%E0%B8%A2%E0%B8%9A%E0%B8%B2%E0%B8%A2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%81%E0%B8%9C%E0%B8%99",
+    "snippet": "ข่าวจัดซื้อจัดจ้าง. 3. ประกาศ เรื่องการขายทอดตลาดวัสดุที่ได้จากการรื้อถอนอาคารเรียน โรงเรียนบ้านหนองบัว.",
+    "date": "10 ชั่วโมงที่ผ่านมา",
+    "position": 5,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.mnre.go.th/th/th/news/detail/254218": {
+    "title": "Ministry of Natural Resources and Environment",
+    "link": "https://www.mnre.go.th/th/th/news/detail/254218",
+    "snippet": "ประกาศสำนักงานปลัดกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม เรื่อง ขายทอดตลาดครุภัณฑ์ยานพาหนะและขนส่ง ...",
+    "date": "3 ชั่วโมงที่ผ่านมา",
+    "position": 7,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://www.nancity.go.th/news/detail/5311/data.html": {
+    "title": "นายกเทศมนตรีเมืองน่าน ร่วมประชุมคณะกรรมการพัฒนาโรง ...",
+    "link": "https://www.nancity.go.th/news/detail/5311/data.html",
+    "snippet": "วันที่ 31 กรกฎาคม 2569 เวลา 13.00 น. ณ ห้องประชุมพญาเสือโคร่ง ชั้น 4 อาคารสิริเวชรักษ์ โรงพยาบาล ... ประกาศขายทอดตลาด. การประเมินความเสี่ยงเพื่อการป้องกันการ ...",
+    "date": "9 ชั่วโมงที่ผ่านมา",
+    "position": 7,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://skko.moph.go.th/dward/web/index.php?module=h_kusuman": {
+    "title": "รพ.กุสุมาลย์",
+    "link": "https://skko.moph.go.th/dward/web/index.php?module=h_kusuman",
+    "snippet": "ประกาศจังหวัดสกลนคร ลงวันที่ 19 มิถุนายน 2569 เรื่อง ขายทอดตลาดพัสดุชำรุด เสื่อมสภาพ สูญไป หรือไม่มีความจำเป็นต้องใช้ในราชการ ของโรงพยาบาลกุสุมาลย์ (ครุภัณฑ์ยาน ...",
+    "date": "4 วันที่ผ่านมา",
+    "position": 4,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.mkarea3.go.th/2026/07/25/%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%88%E0%B9%89%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80-5/": {
+    "title": "ช่องทางแจ้งเรื่องร้องเรียนสำนักงาน ป.ป.ท.",
+    "link": "https://www.mkarea3.go.th/2026/07/25/%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%88%E0%B9%89%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80-5/",
+    "snippet": "ขายทอดตลาด/จำหน่าย (2), ข่าวประกาศจัดซื้อจัดจ้าง (8), ข่าวประชาสัมพันธ์ ... สำนักงานเขตพื้นที่การศึกษาประถมศึกษามหาสารคาม เขต 3. 354 หมู่ 2 ต.หัวขวาง อ ...",
+    "date": "7 วันที่ผ่านมา",
+    "position": 8,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://pasukplus.com/informations/65chansanchai/index.php?op=rss&id=55350&page=1636": {
+    "title": "เทศบาลตำบลจานแสนไชย ยินดีให้บริการ",
+    "link": "https://pasukplus.com/informations/65chansanchai/index.php?op=rss&id=55350&page=1636",
+    "snippet": "สำนักปลัด. กองคลัง. กองช่าง. กองการศึกษาฯ. หน่วยตรวจสอบภายใน · เทศบัญญัติงบประมาณ ... ประกาศขายทอดตลาด · จดหมายข่าว. ข่าวประชาสัมพันธ์. กองทุนประกันสุขภาพ สปสช ...",
+    "date": "6 วันที่ผ่านมา",
+    "position": 8,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://webportal.bangkok.go.th/healthcenter23": {
+    "title": "ศูนย์บริการสาธารณสุข 23",
+    "link": "https://webportal.bangkok.go.th/healthcenter23",
+    "snippet": "ขายทอดตลาดพัสดุ ครั้งที่ 1/2569 · อ่านต่อ · อ่านต่อ. ข่าววันที่ : 29 เม.ย. 2569. ประกาศผู้ชนะการเสนอราคา ซื้อวัสดุสำนักงาน โดยวิธีเฉพาะเจาะจง. อ่านต่อ. ข่าววัน ...",
+    "date": "12 ชั่วโมงที่ผ่านมา",
+    "position": 7,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "http://www.nst3.go.th/?p=79396": {
+    "title": "ประกาศ เรื่อง การขายทอดตลาดอาคารเรียนที่รื้อถอน จำนวน 1 หลัง ...",
+    "link": "http://www.nst3.go.th/?p=79396",
+    "snippet": "ประกาศ เรื่อง การขายทอดตลาดอาคารเรียนที่รื้อถอน จำนวน 1 หลัง ของโรงเรียนวัดสุวรรณโฆษิต. 9 กรกฎาคม 2023 วารุณี สุขแต้มจัดซื้อจัดจ้างกลุ่มบริหารงานการเงินและ ...",
+    "date": "4 วันที่ผ่านมา",
+    "position": 2,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://procurement.kku.ac.th/t/bidders?sort": {
+    "title": "ผู้ ชนะ/ผู้ ได้ รับ คัดเลือก",
+    "link": "https://procurement.kku.ac.th/t/bidders?sort",
+    "snippet": "แผนปฏิบัติการจัดซื้อจัดจ้าง ประกาศร่าง TOR ประกาศราคากลาง ประกาศจัดซื้อจัดจ้าง ผู้ชนะ/ผู้ได้รับคัดเลือก ประกาศยกเลิก สัญญา/ข้อตกลง ขายทอดตลาดพัสดุ ประกาศผู้ ...",
+    "date": "2 ชั่วโมงที่ผ่านมา",
+    "position": 3,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://patumrachwongsahospital.com/": {
+    "title": "โรงพยาบาลปทุมราชวงศา: หน้าแรก",
+    "link": "https://patumrachwongsahospital.com/",
+    "snippet": "ประกาศ เรื่อง หลักเกณฑ์และเงื่อนไขการจำหน่ายพัสดุ โดยวิธีขายทอดตลาดพัสดุ (187) Natlada 11:35:00 12-05-2569; ประกาศ เรื่อง ประกาศแผนการจัดซื้อจัดจ้างเพื่อ ...",
+    "date": "4 ชั่วโมงที่ผ่านมา",
+    "position": 5,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://supply.nrhospital.com/wp-content/uploads/sites/2/2023/08/%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%84%E0%B8%A3%E0%B8%B8%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C-%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E-1.pdf": {
+    "title": "ขายทอดตลาดครุภัณฑ์-ชำรุด-เสื่อมสภาพ-1",
+    "link": "https://supply.nrhospital.com/wp-content/uploads/sites/2/2023/08/%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%84%E0%B8%A3%E0%B8%B8%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C-%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E-1.pdf",
+    "snippet": "๑. กำหนด วัน เวลา และสถานที่ขายทอดตลาด. การขายทอดตลาดครุภัณฑ์ชำรุดฯ ของโรงพยาบาลนางรอง จะดำเนินการขายทอดตลาด. ณ ห้องประชุมตึกอุบัติเหตุ ชั้น ๒ โรงพยาบาลนางรอง ...",
+    "date": "14 ส.ค. 2023",
+    "position": 2,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://inspection.moph.go.th/new_file/2022-05-02-08-12-32_C01.pdf": {
+    "title": "เรื่อง ขายทอดตลาดครุภัณฑ์ชำรุด เสื่อมสภาพ จำนวน ๑๐๘ รายการ",
+    "link": "https://inspection.moph.go.th/new_file/2022-05-02-08-12-32_C01.pdf",
+    "snippet": "ทั่วไป. ๑. การขายโดยวิธีขายทอดตลาด ประกอบด้วย ครุภัณฑ์สำนักงาน ครุภัณฑ์คอมพิวเตอร์ ครุภัณฑ์. ๒. ผู้สนใจและมีความประสงค์จะประมูล ให้ติดต่อสอบถามรายละเอียด ได้ ...",
+    "date": "2 พ.ค. 2022",
+    "position": 3,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.prasri.go.th/2020/web/index.php?r=news%2Fdownload&id=896&file=67e481c250b680709939aa05ad723b90.pdf&file_name=%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94+%E0%B8%9B%E0%B8%B5%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5%E0%B8%87%E0%B8%9A+68.pdf": {
+    "title": "ประกาศโรงพยาบาลพระศรีมหาโพธิ์ เรื่อง ขายทอดตลาดพัสดุชำรุด ...",
+    "link": "https://www.prasri.go.th/2020/web/index.php?r=news%2Fdownload&id=896&file=67e481c250b680709939aa05ad723b90.pdf&file_name=%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94+%E0%B8%9B%E0%B8%B5%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5%E0%B8%87%E0%B8%9A+68.pdf",
+    "snippet": "๑๓. ครุภัณฑ์สำนักงาน. เครื่องจับโลหะแบบเดินผ่าน. ๑ เครอง. ๒๐๐ บาท. ๒๐๐.-บาท. ครุภัณฑ์สำนักงาน จำนวน ๑๓ รายการ ๑๕๔ ชิ้น รวมราคาขายทอดตลาด ๑๓,๙๗๐.- บาท. ๑๔.",
+    "date": "4 ก.ย. 2025",
+    "position": 4,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.thatoomhsp.com/userfiles/file/pasadu/20230119/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%20%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94%20%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5%202567.pdf": {
+    "title": "เรื่อง ขายทอดตลาดพัสดุชำรุด เสื่อมสภาพ หรือหมดความจำเป็นใน ...",
+    "link": "https://www.thatoomhsp.com/userfiles/file/pasadu/20230119/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%20%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%94%20%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5%202567.pdf",
+    "snippet": "ขายทอดตลาด ตามรายละเอียดแนบท้าย. ทั้งนี้โรงพยาบาลท่าตูม จะขายทอดตลาดครุภัณฑ์เครื่องคอมพิวเตอร์และครุภัณฑ์การแพทย์ชำรุด. เสื่อมสภาพ หรือหมดความจำเป็นในการใช้ ...",
+    "date": "25 ม.ค. 2024",
+    "position": 5,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.maeonhospital.go.th/?p=18491": {
+    "title": "ประกาศขายทอดตลาดพัสดุชำรุดเสื่อมสภาพ จำนวน 168 รายการ",
+    "link": "https://www.maeonhospital.go.th/?p=18491",
+    "snippet": "ประกาศผู้ชนะการขายทอดตลาดครุภัณฑ์ชำรุด เสื่อมสภาพ จำนวน 168 รายการ · 5 มิถุนายน 2026 ...",
+    "date": "25 พ.ค. 2026",
+    "position": 6,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://wc-hospital.go.th/files/news/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8.pdf": {
+    "title": "เรื่อง การขายทอดตลาดพัสดุที่ชำรุดเสื่อมสภาพ",
+    "link": "https://wc-hospital.go.th/files/news/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B8.pdf",
+    "snippet": "รายละเอียดพัสดุที่นํารุดเสื่อมสภาพและราคาประเมินเพื่อจะจำหน่าย ประจำปี ๒๕๖๕ โดยวิธีขายทอดตลาด. รายการ. หมายเลขครุภัณฑ์ จำนวน | หน่วย. ราคาประเมิน. ส่วนราชการ...",
+    "date": "8 ธ.ค. 2022",
+    "position": 7,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.thalanghospital.go.th/tl/web/blogs/e16a40c81d0fc4e85becfaa5d6b393fa.pdf": {
+    "title": "เรื่อง การขายทอดตลาดครุภัณฑ์ชำรุด จำนวน ๘๕ รายการ",
+    "link": "https://www.thalanghospital.go.th/tl/web/blogs/e16a40c81d0fc4e85becfaa5d6b393fa.pdf",
+    "snippet": "ประกาศจังหวัดภูเก็ต. เรื่อง การขายทอดตลาดครุภัณฑ์ชำรุด จำนวน ๘๕ รายการ. ด้วย จังหวัดภูเก็ต โดยโรงพยาบาลถลาง อำเภอถลาง จังหวัดภูเก็ต จะทำการขายครุภัณฑ์.",
+    "position": 8,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.mthcancer.in.th/document/Purchase/img-625215601.pdf": {
+    "title": "เรื่อง การขายทอดตลาดครุภัณฑ์ชำรุด เสื่อมสภาพ หมดความจำเป็นใช้ ...",
+    "link": "https://www.mthcancer.in.th/document/Purchase/img-625215601.pdf",
+    "snippet": "เรื่อง การขายทอดตลาดครุภัณฑ์ชำรุด เสื่อมสภาพ หมดความจำเป็นใช้ในราชการ. ด้วยกรมการแพทย์ โดยโรงพยาบาลมหาวชิราลงกรณธัญบุรี มีความประสงค์จะ. ขายทอดตลาดครุภัณฑ์ ...",
+    "position": 9,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.maesuaihospital.com/uploads/procurement/8756.pdf": {
+    "title": "เรื่อง ขายทอดตลาดซากครุภัณฑ์ จำนวน ๑๘๓ รายการ",
+    "link": "https://www.maesuaihospital.com/uploads/procurement/8756.pdf",
+    "snippet": "ประกาศจังหวัดเชียงราย. เรื่อง ขายทอดตลาดซากครุภัณฑ์ จำนวน ๑๘๓ รายการ. ด้วย จังหวัดเชียงราย โดย โรงพยาบาลแม่สรวย มีความประสงค์จะดำเนินการขายทอดตลาด. ซากครุภัณฑ์ ...",
+    "date": "20 ม.ค. 2026",
+    "position": 10,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "http://www.klonghin.go.th/news.php?cat_id=13": {
+    "title": "ประกาศจัดซื้อจัดจ้าง",
+    "link": "http://www.klonghin.go.th/news.php?cat_id=13",
+    "snippet": "ประกาศขายพัสดุที่ไม่จำเป็นต้องใช้ในราชการ ประจำปีงบประมาณ 2568 · ดาวน์โหลดเอกสาร [อ่าน 19 คน] เมื่อ 20 พ.ย. 2568. ร่างประกาศประกวดราคา ซื้อครุภัณฑ์ยานพาหนะและ ...",
+    "date": "7 ชั่วโมงที่ผ่านมา",
+    "position": 4,
+    "_found_in": "1d",
+    "_found_at": "13:00"
+  },
+  "https://webportal.bangkok.go.th/public/user_files_editor/88/2569/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%A5%E0%B8%87%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%8B%E0%B8%95%E0%B9%8C%E0%B9%80%E0%B8%82%E0%B8%95/BMA032_20260701143543_6723.pdf?_t=1782976590": {
+    "title": "ประกาศกรุงเทพมหานคร - เรื่อง ขายทอดตลาดพัสดุ",
+    "link": "https://webportal.bangkok.go.th/public/user_files_editor/88/2569/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%A5%E0%B8%87%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%8B%E0%B8%95%E0%B9%8C%E0%B9%80%E0%B8%82%E0%B8%95/BMA032_20260701143543_6723.pdf?_t=1782976590",
+    "snippet": "ลงทะเบียนเป็นผู้เข้าสู้ราคาการขายทอดตลาด และต้องลงทะเบียนให้แล้วเสร็จก่อนเวลาเริ่มการขายทอดตลาด. ไม่น้อยกว่า ๑ ชั่วโมง. ๓. ๕๐,๐๐๐. กรณีการขายทอดตลาดพัสดุที่มี ...",
+    "date": "1 ก.ค. 2026",
+    "position": 5,
+    "_found_in": "1m",
+    "_found_at": "13:00"
+  },
+  "https://webportal.bangkok.go.th/bangkhunthian/page/sub/1540/-/0/info/531963": {
+    "title": "ประกาศสำนักงานเขตบางขุนเทียนขายทอดตลาดพัสดุ จำนวน ...",
+    "link": "https://webportal.bangkok.go.th/bangkhunthian/page/sub/1540/-/0/info/531963",
+    "snippet": "ประกาศสำนักงานเขตบางขุนเทียนขายทอดตลาดพัสดุ จำนวน 3,396 รายการ. 9 ก.ค. 2569 ลงทะเบียน 8.30-9.30 น. เริ่มประมูลราคา 10.30 น. ย้อนกลับ. Share. icon 0; icon ...",
+    "date": "9 ก.ค. 2026",
+    "position": 9,
+    "_found_in": "1m",
+    "_found_at": "13:00"
+  },
+  "https://thainews.prd.go.th/thainews/news/print/1838685/?bid": {
+    "title": "img",
+    "link": "https://thainews.prd.go.th/thainews/news/print/1838685/?bid",
+    "snippet": "... ขายทอดตลาด ในวันที่ 12 มีนาคม 2569 เวลา 09.30 – 10.00 น. เริ่มเปิดประมูลขายทอดตลาดด้วยวาจา ตั้งแต่เวลา 10.15 น. จนกว่าจะแล้วเสร็จ ณ โรงจอดรถยนต์ สำนักงาน ...",
+    "date": "7 วันที่ผ่านมา",
+    "position": 3,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://radiokhonkaen.prd.go.th/th/content/category/detail/id/793/iid/526191": {
+    "title": "รมช.เกษตรฯ ร่วมปลูกต้นไม้เฉลิมพระเกียรติ ณ วัดป่าบ้านค้อ สืบสาน ...",
+    "link": "https://radiokhonkaen.prd.go.th/th/content/category/detail/id/793/iid/526191",
+    "snippet": "องค์การบริหารส่วนจังหวัดขอนแก่น มีความประสงค์ที่จะขายทอดตลาดทรัพย์สินที่ชำรุด · 30 มิถุนายน 2569 98 · ประกาศรายชื่อผู้ผ่านการสอบคัดเลือกและขึ้นบัญชี ลูกจ้าง ...",
+    "date": "5 วันที่ผ่านมา",
+    "position": 9,
+    "_found_in": "7d",
+    "_found_at": "13:00"
+  },
+  "https://www.ph.mahidol.ac.th/procurement/": {
+    "title": "ประกาศประมูลเช่าพื้นที่/ประกาศขายทอดตลาด",
+    "link": "https://www.ph.mahidol.ac.th/procurement/",
+    "snippet": "ประกาศประมูลเช่าพื้นที่. ประกาศขายทอดตลาด. วันที่, รายละเอียด, ดาวน์โหลดรายละเอียด. 14 กรกฎาคม 2569.",
+    "date": "14 ก.ค. 2026",
+    "position": 10,
+    "_found_in": "1m",
+    "_found_at": "13:00"
   }
 }
